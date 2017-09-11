@@ -7,13 +7,11 @@
 //
 
 #import "PlayController.h"
-//#import <KSYMediaPlayer/KSYMoviePlayerController.h>
 #import "VideoModel.h"
 #import "AppDelegate.h"
 
 @interface PlayController ()
 @property (nonatomic, weak) VideoModel               *videoModel;
-//@property (nonatomic, strong) KSYMoviePlayerController *player;
 @property (nonatomic, assign) int64_t   prepared_time;
 @property (nonatomic, assign) NSTimeInterval playedTime;
 @end
@@ -30,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     [self addObserver:self forKeyPath:@"player" options:NSKeyValueObservingOptionNew context:nil];
     [self setupPlayer];
 }
@@ -95,36 +92,17 @@
     [self registerObserver:MPMoviePlayerSeekCompleteNotification player:player];
 }
 
+-(void)handlePlayerNotify:(NSNotification*)notify {
+    
+}
+
 #pragma mark --
 #pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context
-{
-    
-//    if([keyPath isEqual:@"currentPlaybackTime"]) {
-//        if (!self.switchingDefination) {
-//            self.playedTime = _player.currentPlaybackTime;
-//            [_videoContainerView updatePlayedTime:_player.currentPlaybackTime];
-//        }
-//    }
-    //    else if([keyPath isEqual:@"clientIP"])
-    //    {
-    //        NSLog(@"client IP is %@\n", [change objectForKey:NSKeyValueChangeNewKey]);
-    //    }
-    //    else if([keyPath isEqual:@"localDNSIP"])
-    //    {
-    //        NSLog(@"local DNS IP is %@\n", [change objectForKey:NSKeyValueChangeNewKey]);
-    //    }
-//    else if ([keyPath isEqualToString:@"player"]) {
-//        if (_player) {
-//            
-//        } else {
-//            
-//        }
-//    }
+                       context:(void *)context {
 }
 
 #pragma mark -

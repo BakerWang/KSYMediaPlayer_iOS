@@ -54,16 +54,19 @@
 - (void)fullScreenHandlerForPlayController:(UIViewController *)playController
                               isFullScreen:(BOOL) isFullScreen {
     [playController.view removeFromSuperview];
+    [playController removeFromParentViewController];
     UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
     if (isFullScreen) {
         UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
         [keywindow addSubview:playController.view];
+        [_owner addChildViewController:playController];
         [playController.view mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(keywindow);
         }];
         orientation = UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
     } else {
         [_owner.view addSubview:playController.view];
+        [_owner addChildViewController:playController];
         [playController.view mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leading.trailing.top.equalTo(_owner.view);
             make.height.mas_equalTo(211);

@@ -6,10 +6,8 @@
 //  Copyright © 2017年 kingsoft. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "VideoListShowController.h"
 
-@interface VodViewController : BaseViewController
-
-@property (nonatomic, assign) BOOL hasSuspendView;
+@interface VodViewController : VideoListShowController
 
 @end

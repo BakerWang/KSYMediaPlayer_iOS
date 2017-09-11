@@ -55,6 +55,7 @@
 		F00FDA281F5938600001B516 /* RecordeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00FDA261F5938600001B516 /* RecordeViewController.xib */; };
 		F00FDA341F5CFB4C0001B516 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = F00FDA331F5CFB4C0001B516 /* UIView+Toast.m */; };
 		F00FDA3E1F5D4B1E0001B516 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = F00FDA3D1F5D4B1E0001B516 /* UIColor+Additions.m */; };
+		F059EE6E1F66383A00E18C93 /* VideoListShowController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059EE6D1F66383A00E18C93 /* VideoListShowController.m */; };
 		F07DE4131F4C20D400370C54 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4061F4C20D400370C54 /* BaseNavigationController.m */; };
 		F07DE4141F4C20D400370C54 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4081F4C20D400370C54 /* BaseViewController.m */; };
 		F07DE4151F4C20D400370C54 /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */; };
@@ -221,6 +222,8 @@
 		F00FDA331F5CFB4C0001B516 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		F00FDA3C1F5D4B1E0001B516 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		F00FDA3D1F5D4B1E0001B516 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		F059EE6C1F66383A00E18C93 /* VideoListShowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListShowController.h; sourceTree = "<group>"; };
+		F059EE6D1F66383A00E18C93 /* VideoListShowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListShowController.m; sourceTree = "<group>"; };
 		F07DE4051F4C20D400370C54 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		F07DE4061F4C20D400370C54 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		F07DE4071F4C20D400370C54 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -552,6 +555,8 @@
 			children = (
 				F07DE40A1F4C20D400370C54 /* ChoiceViewController.h */,
 				F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */,
+				F059EE6C1F66383A00E18C93 /* VideoListShowController.h */,
+				F059EE6D1F66383A00E18C93 /* VideoListShowController.m */,
 				F07DE40C1F4C20D400370C54 /* LiveViewController.h */,
 				F07DE40D1F4C20D400370C54 /* LiveViewController.m */,
 				F07DE4101F4C20D400370C54 /* VodViewController.h */,
@@ -951,6 +956,7 @@
 				F07DE49A1F4D589F00370C54 /* View+MASAdditions.m in Sources */,
 				F07DE41F1F4C236200370C54 /* VersionSwitchHandler.m in Sources */,
 				F07DE4E51F4D703F00370C54 /* UIButton+WebCache.m in Sources */,
+				F059EE6E1F66383A00E18C93 /* VideoListShowController.m in Sources */,
 				F07DE4DA1F4D703F00370C54 /* MKAnnotationView+WebCache.m in Sources */,
 				F07DE4141F4C20D400370C54 /* BaseViewController.m in Sources */,
 				588141F11ECB0F2F0022A360 /* KSYProgressView.m in Sources */,

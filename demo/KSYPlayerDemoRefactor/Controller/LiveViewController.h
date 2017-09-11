@@ -6,8 +6,8 @@
 //  Copyright © 2017年 kingsoft. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "VideoListShowController.h"
 
-@interface LiveViewController : BaseViewController
+@interface LiveViewController : VideoListShowController
 
 @end

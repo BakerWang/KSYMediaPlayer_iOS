@@ -1,12 +1,12 @@
 //
-//  VodViewController.m
+//  VideoListShowController.m
 //  KSYPlayerDemo
 //
-//  Created by devcdl on 2017/8/22.
+//  Created by devcdl on 2017/9/11.
 //  Copyright © 2017年 kingsoft. All rights reserved.
 //
 
-#import "VodViewController.h"
+#import "VideoListShowController.h"
 //#import "VideoListViewModel.h"
 //#import "PlayerViewController.h"
 //#import "FlowLayout.h"
@@ -14,7 +14,6 @@
 //#import "VideoCollectionViewCell.h"
 //#import "PlayerViewController.h"
 //#import "PlayerViewModel.h"
-//#import "Constant.h"
 //#import "VideoCollectionHeaderView.h"
 //#import "SuspendPlayView.h"
 //#import "VideoContainerView.h"
@@ -22,7 +21,7 @@
 //#import "VideoModel.h"
 //#import "UIView+Toast.h"
 
-@interface VodViewController ()
+@interface VideoListShowController ()
 //<UICollectionViewDataSource, UICollectionViewDelegate, FlowLayoutDelegate>
 //@property (nonatomic, strong) VideoListViewModel        *videoListViewModel;
 //@property (nonatomic, strong) UICollectionView          *videoCollectionView;
@@ -32,34 +31,26 @@
 //@property (nonatomic, strong) UIView                    *clearView;
 //@property (nonatomic, assign) BOOL willAppearFromPlayerView;
 //@property (nonatomic, assign) BOOL isMoving;
+//@property (nonatomic, assign) VideoListShowType showType;
+
 @end
 
+@implementation VideoListShowController
 
-@implementation VodViewController
+- (instancetype)initWithShowType:(VideoListShowType)showType {
+    if (self = [super init]) {
+        _showType = showType;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self setupUI];
-    [self fetchDatasource];
+    [self setupUI];
+//    [self fetchDatasource];
 }
 
-- (void)fetchDatasource {
-    NSURL *url = [NSURL URLWithString:@"https://appdemo.download.ks-cdn.com:8682/api/GetLiveUrl/2017-01-01?Option=2"];
-    NSURLSession *session = [NSURLSession sharedSession];
-    __weak typeof(self) weakSelf = self;
-    [self.view makeToastActivity:CSToastPositionCenter];
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf.view hideToastActivity];
-        strongSelf.videoListViewModel = [[VideoListViewModel alloc] initWithJsonResponseData:data];
-        [strongSelf.videoCollectionView reloadData];
-        [strongSelf.headerView configeVideoModel:self.videoListViewModel.listViewDataSource.firstObject];
-    }];
-    [task resume];
-}
-
-/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
@@ -289,6 +280,4 @@
     self.isMoving = NO;
 }
 
-*/
- 
 @end

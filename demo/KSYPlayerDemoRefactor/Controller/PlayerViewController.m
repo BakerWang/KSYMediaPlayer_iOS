@@ -27,8 +27,6 @@
 @property (nonatomic, strong) KSYMoviePlayerController *player;
 @property (nonatomic, strong) UITableView              *videoTableView;
 @property (nonatomic, assign) int64_t   prepared_time;
-@property (nonatomic, assign) int       fvr_costtime;
-@property (nonatomic, assign) int       far_costtime;
 @property (nonatomic, assign) NSTimeInterval playedTime;
 @property (nonatomic, assign) BOOL  switchingDefination;
 @property (nonatomic, strong) UpdateVolumeAndBrightView *volumeBrightControlView;
@@ -73,8 +71,8 @@
     [super viewWillDisappear:animated];
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.allowRotation = NO;
-    if (self.willDisappearBlocked) {
-        self.willDisappearBlocked();
+    if (self.willDisappearBlock) {
+        self.willDisappearBlock();
     }
 }
 

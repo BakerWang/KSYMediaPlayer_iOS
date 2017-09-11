@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) VideoContainerView       *videoContainerView;
 
-@property (nonatomic, copy) void(^willDisappearBlocked)(void);
+@property (nonatomic, copy) void(^willDisappearBlock)(void);
 
 - (instancetype)initWithPlayerViewModel:(PlayerViewModel *)playerViewModel;
 

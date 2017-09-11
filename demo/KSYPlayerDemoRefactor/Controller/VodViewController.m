@@ -191,7 +191,7 @@
     PlayerViewController *pvc = [[PlayerViewController alloc] initWithPlayerViewModel:playerViewModel];
     self.pvc = pvc;
     __weak typeof(self) weakSelf = self;
-    pvc.willDisappearBlocked = ^{
+    pvc.willDisappearBlock = ^{
         typeof(weakSelf) strongSelf = weakSelf;
         strongSelf.willAppearFromPlayerView = YES;
     };

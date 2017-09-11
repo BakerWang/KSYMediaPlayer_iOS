@@ -7,32 +7,30 @@
 //
 
 #import "VideoListShowController.h"
-//#import "VideoListViewModel.h"
-//#import "PlayerViewController.h"
-//#import "FlowLayout.h"
-//#import "Masonry.h"
-//#import "VideoCollectionViewCell.h"
-//#import "PlayerViewController.h"
-//#import "PlayerViewModel.h"
-//#import "VideoCollectionHeaderView.h"
-//#import "SuspendPlayView.h"
-//#import "VideoContainerView.h"
-//#import "QRViewController.h"
-//#import "VideoModel.h"
-//#import "UIView+Toast.h"
+#import "VideoListViewModel.h"
+#import "PlayerViewController.h"
+#import "FlowLayout.h"
+#import "Masonry.h"
+#import "VideoCollectionViewCell.h"
+#import "PlayerViewController.h"
+#import "PlayerViewModel.h"
+#import "VideoCollectionHeaderView.h"
+#import "SuspendPlayView.h"
+#import "VideoContainerView.h"
+#import "QRViewController.h"
+#import "VideoModel.h"
+#import "UIView+Toast.h"
 
 @interface VideoListShowController ()
-//<UICollectionViewDataSource, UICollectionViewDelegate, FlowLayoutDelegate>
-//@property (nonatomic, strong) VideoListViewModel        *videoListViewModel;
-//@property (nonatomic, strong) UICollectionView          *videoCollectionView;
-//@property (nonatomic, strong) VideoCollectionHeaderView *headerView;
-//@property (nonatomic, strong) PlayerViewController      *pvc;
-//@property (nonatomic, strong) SuspendPlayView           *suspendView;
-//@property (nonatomic, strong) UIView                    *clearView;
-//@property (nonatomic, assign) BOOL willAppearFromPlayerView;
-//@property (nonatomic, assign) BOOL isMoving;
-//@property (nonatomic, assign) VideoListShowType showType;
-
+<UICollectionViewDataSource, UICollectionViewDelegate, FlowLayoutDelegate>
+@property (nonatomic, strong) VideoListViewModel        *videoListViewModel;
+@property (nonatomic, strong) UICollectionView          *videoCollectionView;
+@property (nonatomic, strong) VideoCollectionHeaderView *headerView;
+@property (nonatomic, strong) PlayerViewController      *pvc;
+@property (nonatomic, strong) SuspendPlayView           *suspendView;
+@property (nonatomic, strong) UIView                    *clearView;
+@property (nonatomic, assign) BOOL willAppearFromPlayerView;
+@property (nonatomic, assign) BOOL isMoving;
 @end
 
 @implementation VideoListShowController
@@ -48,7 +46,7 @@
     [super viewDidLoad];
     
     [self setupUI];
-//    [self fetchDatasource];
+    [self fetchDatasource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +90,8 @@
 }
 
 - (void)fetchDatasource {
-    NSURL *url = [NSURL URLWithString:@"https://appdemo.download.ks-cdn.com:8682/api/GetLiveUrl/2017-01-01?Option=2"];
+    NSString *urlString = [NSString stringWithFormat:@"https://appdemo.download.ks-cdn.com:8682/api/GetLiveUrl/2017-01-01?Option=%zd", _showType];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
     __weak typeof(self) weakSelf = self;
     [self.view makeToastActivity:CSToastPositionCenter];

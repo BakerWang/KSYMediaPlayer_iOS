@@ -47,7 +47,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="vod"/>
                                 <connections>
-                                    <segue destination="46e-SS-8zI" kind="push" id="Udy-xD-knc"/>
+                                    <segue destination="46e-SS-8zI" kind="push" identifier="pushToVodVideoListId" id="Udy-xD-knc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvE-Lm-qPf">
@@ -58,7 +58,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="live"/>
                                 <connections>
-                                    <segue destination="aMp-p6-7Vf" kind="push" id="ctQ-an-mD5"/>
+                                    <segue destination="46e-SS-8zI" kind="push" identifier="pushToLiveVideoListId" id="6jg-66-5Ti"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf8-Kj-8WU">
@@ -84,34 +84,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57" y="357"/>
-        </scene>
-        <!--直播-->
-        <scene sceneID="S6V-jX-9Dc">
-            <objects>
-                <viewController id="aMp-p6-7Vf" customClass="LiveViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="直播" id="sBO-C0-yJS">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="dgv-4m-w41">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J0z-6L-zss">
-                                <rect key="frame" x="16" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="scan"/>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="6Mg-lY-CGi">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9mA-l0-h0t">
-                                <rect key="frame" x="337" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="setting"/>
-                                <connections>
-                                    <segue destination="pPq-qg-Mmg" kind="push" id="yMx-QO-3GN"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zik-BI-9M9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="831" y="18"/>
         </scene>
         <!--设置-->
         <scene sceneID="O59-Rw-8GA">
@@ -490,12 +462,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWf-QC-x9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="417"/>
+            <point key="canvasLocation" x="1673" y="357"/>
         </scene>
         <!--点播-->
         <scene sceneID="KVx-60-Pu4">
             <objects>
-                <viewController id="46e-SS-8zI" customClass="VodViewController" sceneMemberID="viewController">
+                <viewController id="46e-SS-8zI" customClass="VideoListShowController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="60A-Ml-yPX"/>
                         <viewControllerLayoutGuide type="bottom" id="gi8-gq-MSl"/>
@@ -532,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfT-MN-TMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="869"/>
+            <point key="canvasLocation" x="884" y="357"/>
         </scene>
     </scenes>
     <resources>
@@ -546,6 +518,6 @@
         <image name="vod" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AZF-MK-epO"/>
+        <segue reference="Udy-xD-knc"/>
     </inferredMetricsTieBreakers>
 </document>

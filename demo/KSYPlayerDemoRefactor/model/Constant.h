@@ -20,8 +20,9 @@ typedef NS_ENUM(NSInteger, VCPlayHandlerState) {
 };
 
 typedef NS_ENUM(NSInteger, VideoListShowType) {
-    VideoListShowTypeVod,          // 点播视频列表
-    VideoListShowTypeLive          // 直播视频列表
+    VideoListShowTypeUnknown,
+    VideoListShowTypeLive,          // 直播视频列表
+    VideoListShowTypeVod,           // 点播视频列表
 };
 
 static NSString * const kVideoCollectionViewCellId = @"kVideoCollectionViewCellId";

@@ -354,7 +354,7 @@
         if(((_player.naturalRotate / 90) % 2  == 0 && _player.naturalSize.width > _player.naturalSize.height) ||
            ((_player.naturalRotate / 90) % 2 != 0 && _player.naturalSize.width < _player.naturalSize.height))
         {
-            //如果想要在宽大于高的时候横屏播放，你可以在这里旋转
+            如果想要在宽大于高的时候横屏播放，你可以在这里旋转
         }
     }
     if (MPMoviePlayerFirstVideoFrameRenderedNotification == notify.name)

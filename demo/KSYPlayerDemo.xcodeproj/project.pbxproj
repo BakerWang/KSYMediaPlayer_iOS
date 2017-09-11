@@ -27,7 +27,6 @@
 		588141FD1ECB0F690022A360 /* KSYNameSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 588141F71ECB0F690022A360 /* KSYNameSlider.m */; };
 		588141FE1ECB0F690022A360 /* KSYUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 588141F91ECB0F690022A360 /* KSYUIVC.m */; };
 		588141FF1ECB0F690022A360 /* KSYUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 588141FB1ECB0F690022A360 /* KSYUIView.m */; };
-		6EA863FDFD00A477E6662B78 /* libPods-KSYPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A79EF83575990A8FD5FA3 /* libPods-KSYPlayerDemo.a */; };
 		74B9ED5D1C158675003149E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9ED5C1C158675003149E9 /* main.m */; };
 		74B9ED601C158675003149E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B9ED5F1C158675003149E9 /* AppDelegate.m */; };
 		74B9ED681C158675003149E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B9ED671C158675003149E9 /* Assets.xcassets */; };
@@ -59,8 +58,6 @@
 		F07DE4131F4C20D400370C54 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4061F4C20D400370C54 /* BaseNavigationController.m */; };
 		F07DE4141F4C20D400370C54 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4081F4C20D400370C54 /* BaseViewController.m */; };
 		F07DE4151F4C20D400370C54 /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */; };
-		F07DE4161F4C20D400370C54 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE40D1F4C20D400370C54 /* LiveViewController.m */; };
-		F07DE4181F4C20D400370C54 /* VodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4111F4C20D400370C54 /* VodViewController.m */; };
 		F07DE41A1F4C21D000370C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07DE4191F4C21D000370C54 /* Main.storyboard */; };
 		F07DE41F1F4C236200370C54 /* VersionSwitchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE41E1F4C236200370C54 /* VersionSwitchHandler.m */; };
 		F07DE42A1F4C34C600370C54 /* SettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4291F4C34C600370C54 /* SettingModel.m */; };
@@ -121,6 +118,7 @@
 		F0E6FEE31F53CB3800BA549A /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FED71F53CB3800BA549A /* JSONModel+networking.m */; };
 		F0E6FEE41F53CB3800BA549A /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FEDA1F53CB3800BA549A /* JSONKeyMapper.m */; };
 		F0E6FEE51F53CB3800BA549A /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FEDC1F53CB3800BA549A /* JSONValueTransformer.m */; };
+		F6B1B67919D3C1BE6DE4B382 /* libPods-KSYPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00535A9894235347C9B4181D /* libPods-KSYPlayerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,8 +135,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00535A9894235347C9B4181D /* libPods-KSYPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSYPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D57ABB8096764A5215B710F /* Pods-KSYPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		20DC534FF88B4DCC1AE2155D /* Pods-KSYPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		314D1B4F1EF8FAC80033C993 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
-		362693B01849EABAB6268411 /* Pods-KSYPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		581D3A7E1DE68CDA00051F63 /* KSYMediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSYMediaPlayer.framework; path = ../framework/live/KSYMediaPlayer.framework; sourceTree = "<group>"; };
 		582096011EDED32600C38D0F /* KSYAVWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAVWriter.h; sourceTree = "<group>"; };
 		582096021EDED32600C38D0F /* KSYAVWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYAVWriter.m; sourceTree = "<group>"; };
@@ -190,7 +190,6 @@
 		74B9EE301C159649003149E9 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		7C89723C1C461FBC00535BC8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7C9220B91C984FC9005EF1D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		845A79EF83575990A8FD5FA3 /* libPods-KSYPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSYPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955FDFC41CCF3EC300B37F54 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		955FDFC51CCF3EC300B37F54 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		95B4A40A1CC085BE00CB6804 /* KSYLiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYLiveVC.h; sourceTree = "<group>"; };
@@ -201,7 +200,6 @@
 		95B4A40F1CC085BE00CB6804 /* KSYSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYSQLiteManager.m; sourceTree = "<group>"; };
 		95B4A4101CC085BE00CB6804 /* QRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRViewController.h; sourceTree = "<group>"; };
 		95B4A4111CC085BE00CB6804 /* QRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRViewController.m; sourceTree = "<group>"; };
-		D80F1625BD5080D22E88B322 /* Pods-KSYPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E328B4D61CCE087400BD31FC /* KSYDBCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYDBCreater.h; sourceTree = "<group>"; };
 		E328B4D71CCE087400BD31FC /* KSYDBCreater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYDBCreater.m; sourceTree = "<group>"; };
 		F00FDA061F5552A10001B516 /* DefinitionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefinitionMenuView.h; sourceTree = "<group>"; };
@@ -230,10 +228,6 @@
 		F07DE4081F4C20D400370C54 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F07DE40A1F4C20D400370C54 /* ChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
 		F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
-		F07DE40C1F4C20D400370C54 /* LiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
-		F07DE40D1F4C20D400370C54 /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
-		F07DE4101F4C20D400370C54 /* VodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodViewController.h; sourceTree = "<group>"; };
-		F07DE4111F4C20D400370C54 /* VodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VodViewController.m; sourceTree = "<group>"; };
 		F07DE4191F4C21D000370C54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F07DE41D1F4C236200370C54 /* VersionSwitchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionSwitchHandler.h; sourceTree = "<group>"; };
 		F07DE41E1F4C236200370C54 /* VersionSwitchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionSwitchHandler.m; sourceTree = "<group>"; };
@@ -370,19 +364,28 @@
 				74B9EE2F1C159643003149E9 /* libstdc++.6.tbd in Frameworks */,
 				74B9EE2B1C159630003149E9 /* libbz2.tbd in Frameworks */,
 				74B9EE291C159629003149E9 /* libz.tbd in Frameworks */,
-				6EA863FDFD00A477E6662B78 /* libPods-KSYPlayerDemo.a in Frameworks */,
+				F6B1B67919D3C1BE6DE4B382 /* libPods-KSYPlayerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		425432E3F40F94CD2DFDE2E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D57ABB8096764A5215B710F /* Pods-KSYPlayerDemo.debug.xcconfig */,
+				20DC534FF88B4DCC1AE2155D /* Pods-KSYPlayerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		581D3A7D1DE68CDA00051F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				314D1B4F1EF8FAC80033C993 /* Bugly.framework */,
 				581D3A7E1DE68CDA00051F63 /* KSYMediaPlayer.framework */,
-				845A79EF83575990A8FD5FA3 /* libPods-KSYPlayerDemo.a */,
+				00535A9894235347C9B4181D /* libPods-KSYPlayerDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -454,7 +457,7 @@
 				74B9ED5A1C158675003149E9 /* KSYPlayerDemo */,
 				74B9ED591C158675003149E9 /* Products */,
 				581D3A7D1DE68CDA00051F63 /* Frameworks */,
-				CF84E2BCCB4E6FB7F750BF10 /* Pods */,
+				425432E3F40F94CD2DFDE2E5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,15 +510,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CF84E2BCCB4E6FB7F750BF10 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D80F1625BD5080D22E88B322 /* Pods-KSYPlayerDemo.debug.xcconfig */,
-				362693B01849EABAB6268411 /* Pods-KSYPlayerDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F00FDA311F5CFB4C0001B516 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,10 +551,6 @@
 				F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */,
 				F059EE6C1F66383A00E18C93 /* VideoListShowController.h */,
 				F059EE6D1F66383A00E18C93 /* VideoListShowController.m */,
-				F07DE40C1F4C20D400370C54 /* LiveViewController.h */,
-				F07DE40D1F4C20D400370C54 /* LiveViewController.m */,
-				F07DE4101F4C20D400370C54 /* VodViewController.h */,
-				F07DE4111F4C20D400370C54 /* VodViewController.m */,
 				F0E6FDB21F4E7D9100BA549A /* SettingViewController.h */,
 				F0E6FDB31F4E7D9100BA549A /* SettingViewController.m */,
 				F07DE42E1F4C4FD200370C54 /* PlayerViewController.h */,
@@ -800,13 +790,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74B9ED6F1C158675003149E9 /* Build configuration list for PBXNativeTarget "KSYPlayerDemo" */;
 			buildPhases = (
-				CAF83FEC6C9A877322C47511 /* [CP] Check Pods Manifest.lock */,
+				FC0CA604E1B6616153EB4C3C /* [CP] Check Pods Manifest.lock */,
 				74B9ED541C158675003149E9 /* Sources */,
 				74B9ED551C158675003149E9 /* Frameworks */,
 				74B9ED561C158675003149E9 /* Resources */,
 				7461698C1D214AE5005941DF /* Embed Frameworks */,
-				02FBAECBD6052E002265CF28 /* [CP] Embed Pods Frameworks */,
-				72B92E49A1D47AA03F35CE8E /* [CP] Copy Pods Resources */,
+				2D7374FC4E2AE7537AA495CF /* [CP] Embed Pods Frameworks */,
+				1161E51AB11F815857202FDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -876,22 +866,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02FBAECBD6052E002265CF28 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72B92E49A1D47AA03F35CE8E /* [CP] Copy Pods Resources */ = {
+		1161E51AB11F815857202FDA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -906,7 +881,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CAF83FEC6C9A877322C47511 /* [CP] Check Pods Manifest.lock */ = {
+		2D7374FC4E2AE7537AA495CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0CA604E1B6616153EB4C3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -931,7 +921,6 @@
 				F07DE4E91F4D703F00370C54 /* UIImageView+HighlightedWebCache.m in Sources */,
 				F07DE4E61F4D703F00370C54 /* UIImage+GIF.m in Sources */,
 				F00FDA151F57BA0F0001B516 /* SuspendPlayView.m in Sources */,
-				F07DE4161F4C20D400370C54 /* LiveViewController.m in Sources */,
 				F07DE4151F4C20D400370C54 /* ChoiceViewController.m in Sources */,
 				F07DE4E11F4D703F00370C54 /* SDWebImageDownloader.m in Sources */,
 				F07DE42A1F4C34C600370C54 /* SettingModel.m in Sources */,
@@ -989,7 +978,6 @@
 				F07DE4391F4C593700370C54 /* VideoModel.m in Sources */,
 				F0E6FDAA1F4DACF300BA549A /* PlayerTableViewCell.m in Sources */,
 				588141FC1ECB0F690022A360 /* KSYFileSelector.m in Sources */,
-				F07DE4181F4C20D400370C54 /* VodViewController.m in Sources */,
 				F07DE49B1F4D589F00370C54 /* ViewController+MASAdditions.m in Sources */,
 				F0E6FEE41F53CB3800BA549A /* JSONKeyMapper.m in Sources */,
 				F07DE4EC1F4D703F00370C54 /* UIView+WebCacheOperation.m in Sources */,
@@ -1120,7 +1108,7 @@
 		};
 		74B9ED701C158675003149E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D80F1625BD5080D22E88B322 /* Pods-KSYPlayerDemo.debug.xcconfig */;
+			baseConfigurationReference = 1D57ABB8096764A5215B710F /* Pods-KSYPlayerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1144,7 +1132,7 @@
 		};
 		74B9ED711C158675003149E9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 362693B01849EABAB6268411 /* Pods-KSYPlayerDemo.release.xcconfig */;
+			baseConfigurationReference = 20DC534FF88B4DCC1AE2155D /* Pods-KSYPlayerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

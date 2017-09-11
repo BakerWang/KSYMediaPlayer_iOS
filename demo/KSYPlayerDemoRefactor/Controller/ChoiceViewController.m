@@ -7,7 +7,9 @@
 //
 
 #import "ChoiceViewController.h"
+#import "VideoListShowController.h"
 #import "VersionSwitchHandler.h"
+#import "Constant.h"
 
 @interface ChoiceViewController ()
 
@@ -25,19 +27,21 @@
     [VersionSwitchHandler switchToOldVersion];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    VideoListShowType showType = VideoListShowTypeUnknown;
+    NSString *identifier = segue.identifier;
+    if ([identifier isEqualToString:@"pushToLiveVideoListId"]) {
+        showType = VideoListShowTypeLive;
+    } else if ([identifier isEqualToString:@"pushToVodVideoListId"]) {
+        showType = VideoListShowTypeVod;
+    }
+    if (showType != VideoListShowTypeUnknown) {
+        VideoListShowController *vlsc = (VideoListShowController *)segue.destinationViewController;
+        vlsc.showType = showType;
+    }
 }
-*/
+
 
 @end

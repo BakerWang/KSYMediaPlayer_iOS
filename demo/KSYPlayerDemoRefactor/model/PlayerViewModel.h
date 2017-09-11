@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "VideoListViewModel.h"
 
-@class VideoContainerView;
+@class VodPlayOperationView, VideoContainerView;
 
 @interface PlayerViewModel : NSObject
 
@@ -28,6 +28,9 @@
 
 - (void)fullScreenHandlerForView:(VideoContainerView *)aView
                    isFullScreen:(BOOL) isFullScreen;
+
+- (void)fullScreenHandlerForPlayController:(UIViewController *)playController
+                    isFullScreen:(BOOL) isFullScreen;
 
 - (VideoModel *)nextVideoModel;
 

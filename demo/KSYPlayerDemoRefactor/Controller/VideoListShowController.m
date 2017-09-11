@@ -10,7 +10,6 @@
 #import "VideoListViewModel.h"
 #import "PlayerViewController.h"
 #import "FlowLayout.h"
-#import "Masonry.h"
 #import "VideoCollectionViewCell.h"
 #import "PlayerViewController.h"
 #import "PlayerViewModel.h"
@@ -20,6 +19,9 @@
 #import "QRViewController.h"
 #import "VideoModel.h"
 #import "UIView+Toast.h"
+
+#import "VodListPlayController.h"
+#import "LivePlayController.h"
 
 @interface VideoListShowController ()
 <UICollectionViewDataSource, UICollectionViewDelegate, FlowLayoutDelegate>
@@ -195,14 +197,20 @@
         return;
     }
     PlayerViewModel *playerViewModel = [[PlayerViewModel alloc] initWithPlayingVideoModel:videoModel videoListViewModel:_videoListViewModel selectedIndex:selectedIndex];
-    PlayerViewController *pvc = [[PlayerViewController alloc] initWithPlayerViewModel:playerViewModel];
-    self.pvc = pvc;
-    __weak typeof(self) weakSelf = self;
-    pvc.willDisappearBlock = ^{
-        typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.willAppearFromPlayerView = YES;
-    };
-    [self.navigationController pushViewController:pvc animated:YES];
+//    PlayerViewController *pvc = [[PlayerViewController alloc] initWithPlayerViewModel:playerViewModel];
+//    self.pvc = pvc;
+//    __weak typeof(self) weakSelf = self;
+//    pvc.willDisappearBlock = ^{
+//        typeof(weakSelf) strongSelf = weakSelf;
+//        strongSelf.willAppearFromPlayerView = YES;
+//    };
+//    [self.navigationController pushViewController:pvc animated:YES];
+    
+    UIViewController *desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
+    if (self.showType == VideoListShowTypeLive) {
+        desVC = [[LivePlayController alloc] initWithVideoModel:videoModel];
+    }
+    [self.navigationController pushViewController:desVC animated:YES];
 }
 
 #pragma mark - CollectionView Datasource and Delegate

@@ -1,8 +1,8 @@
 //
-//  BaseViewController.h
+//  BaseView.h
 //  KSYPlayerDemo
 //
-//  Created by devcdl on 2017/8/22.
+//  Created by devcdl on 2017/9/11.
 //  Copyright © 2017年 kingsoft. All rights reserved.
 //
 
@@ -10,6 +10,6 @@
 #import "Masonry.h"
 #import "Constant.h"
 
-@interface BaseViewController : UIViewController
+@interface BaseView : UIView
 
 @end

@@ -102,6 +102,12 @@
 		F07DE4EC1F4D703F00370C54 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4D81F4D703F00370C54 /* UIView+WebCacheOperation.m */; };
 		F07DE4F21F4D999F00370C54 /* VideoCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07DE4F11F4D999F00370C54 /* VideoCollectionHeaderView.xib */; };
 		F07DE4F51F4D99D500370C54 /* VideoCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4F41F4D99D500370C54 /* VideoCollectionHeaderView.m */; };
+		F0AEF1561F666DF10079466E /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1551F666DF10079466E /* PlayController.m */; };
+		F0AEF1591F666DFF0079466E /* VodPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1581F666DFF0079466E /* VodPlayController.m */; };
+		F0AEF15C1F666E0E0079466E /* LivePlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF15B1F666E0E0079466E /* LivePlayController.m */; };
+		F0AEF15F1F6682E10079466E /* VodListPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF15E1F6682E10079466E /* VodListPlayController.m */; };
+		F0AEF1621F6691F20079466E /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1611F6691F20079466E /* BaseView.m */; };
+		F0AEF1651F6692750079466E /* VodPlayOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1641F6692740079466E /* VodPlayOperationView.m */; };
 		F0E6FDA61F4DAB6000BA549A /* VideoContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */; };
 		F0E6FDAA1F4DACF300BA549A /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FDA81F4DACF300BA549A /* PlayerTableViewCell.m */; };
 		F0E6FDAB1F4DACF300BA549A /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E6FDA91F4DACF300BA549A /* PlayerTableViewCell.xib */; };
@@ -319,6 +325,18 @@
 		F07DE4F11F4D999F00370C54 /* VideoCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCollectionHeaderView.xib; sourceTree = "<group>"; };
 		F07DE4F31F4D99D500370C54 /* VideoCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionHeaderView.h; sourceTree = "<group>"; };
 		F07DE4F41F4D99D500370C54 /* VideoCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionHeaderView.m; sourceTree = "<group>"; };
+		F0AEF1541F666DF10079466E /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
+		F0AEF1551F666DF10079466E /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
+		F0AEF1571F666DFF0079466E /* VodPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodPlayController.h; sourceTree = "<group>"; };
+		F0AEF1581F666DFF0079466E /* VodPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VodPlayController.m; sourceTree = "<group>"; };
+		F0AEF15A1F666E0E0079466E /* LivePlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePlayController.h; sourceTree = "<group>"; };
+		F0AEF15B1F666E0E0079466E /* LivePlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePlayController.m; sourceTree = "<group>"; };
+		F0AEF15D1F6682E10079466E /* VodListPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodListPlayController.h; sourceTree = "<group>"; };
+		F0AEF15E1F6682E10079466E /* VodListPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VodListPlayController.m; sourceTree = "<group>"; };
+		F0AEF1601F6691F20079466E /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		F0AEF1611F6691F20079466E /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		F0AEF1631F6692740079466E /* VodPlayOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodPlayOperationView.h; sourceTree = "<group>"; };
+		F0AEF1641F6692740079466E /* VodPlayOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VodPlayOperationView.m; sourceTree = "<group>"; };
 		F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoContainerView.xib; sourceTree = "<group>"; };
 		F0E6FDA71F4DACF300BA549A /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
 		F0E6FDA81F4DACF300BA549A /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
@@ -540,6 +558,8 @@
 				F07DE4061F4C20D400370C54 /* BaseNavigationController.m */,
 				F07DE4071F4C20D400370C54 /* BaseViewController.h */,
 				F07DE4081F4C20D400370C54 /* BaseViewController.m */,
+				F0AEF1601F6691F20079466E /* BaseView.h */,
+				F0AEF1611F6691F20079466E /* BaseView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -551,6 +571,14 @@
 				F07DE40B1F4C20D400370C54 /* ChoiceViewController.m */,
 				F059EE6C1F66383A00E18C93 /* VideoListShowController.h */,
 				F059EE6D1F66383A00E18C93 /* VideoListShowController.m */,
+				F0AEF1541F666DF10079466E /* PlayController.h */,
+				F0AEF1551F666DF10079466E /* PlayController.m */,
+				F0AEF1571F666DFF0079466E /* VodPlayController.h */,
+				F0AEF1581F666DFF0079466E /* VodPlayController.m */,
+				F0AEF15A1F666E0E0079466E /* LivePlayController.h */,
+				F0AEF15B1F666E0E0079466E /* LivePlayController.m */,
+				F0AEF15D1F6682E10079466E /* VodListPlayController.h */,
+				F0AEF15E1F6682E10079466E /* VodListPlayController.m */,
 				F0E6FDB21F4E7D9100BA549A /* SettingViewController.h */,
 				F0E6FDB31F4E7D9100BA549A /* SettingViewController.m */,
 				F07DE42E1F4C4FD200370C54 /* PlayerViewController.h */,
@@ -570,6 +598,8 @@
 				F07DE4441F4D44E500370C54 /* VideoContainerView.h */,
 				F07DE4451F4D44E500370C54 /* VideoContainerView.m */,
 				F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */,
+				F0AEF1631F6692740079466E /* VodPlayOperationView.h */,
+				F0AEF1641F6692740079466E /* VodPlayOperationView.m */,
 				F07DE4A91F4D6C3300370C54 /* VideoCollectionViewCell.h */,
 				F07DE4AA1F4D6C3300370C54 /* VideoCollectionViewCell.m */,
 				F07DE4AB1F4D6C3300370C54 /* VideoCollectionViewCell.xib */,
@@ -931,6 +961,7 @@
 				582CC6051F3072A200DFED24 /* KSYPlayerSubtitleView.m in Sources */,
 				F00FDA121F56D4C30001B516 /* UpdateVolumeAndBrightView.m in Sources */,
 				F07DE4971F4D589F00370C54 /* MASViewConstraint.m in Sources */,
+				F0AEF1651F6692750079466E /* VodPlayOperationView.m in Sources */,
 				F07DE4DE1F4D703F00370C54 /* SDImageCacheConfig.m in Sources */,
 				582CC6041F30729E00DFED24 /* KSYPlayerPicView.m in Sources */,
 				F07DE4DB1F4D703F00370C54 /* NSData+ImageContentType.m in Sources */,
@@ -941,6 +972,7 @@
 				F07DE4E41F4D703F00370C54 /* SDWebImagePrefetcher.m in Sources */,
 				F0E6FEE21F53CB3800BA549A /* JSONHTTPClient.m in Sources */,
 				F07DE4461F4D44E500370C54 /* VideoContainerView.m in Sources */,
+				F0AEF15F1F6682E10079466E /* VodListPlayController.m in Sources */,
 				587CEF481EFBA7BC0018F226 /* KSYSimplePlayVC.m in Sources */,
 				F07DE49A1F4D589F00370C54 /* View+MASAdditions.m in Sources */,
 				F07DE41F1F4C236200370C54 /* VersionSwitchHandler.m in Sources */,
@@ -956,12 +988,15 @@
 				955FDFC61CCF3EC300B37F54 /* ViewController.m in Sources */,
 				588141EB1ECB0F2F0022A360 /* KSYFloatVC.m in Sources */,
 				F07DE4DF1F4D703F00370C54 /* SDWebImageCompat.m in Sources */,
+				F0AEF1621F6691F20079466E /* BaseView.m in Sources */,
+				F0AEF1591F666DFF0079466E /* VodPlayController.m in Sources */,
 				F0E6FDB41F4E7D9100BA549A /* SettingViewController.m in Sources */,
 				F0E6FEE01F53CB3800BA549A /* JSONModelError.m in Sources */,
 				95B4A4151CC085BE00CB6804 /* QRViewController.m in Sources */,
 				F0E6FEE51F53CB3800BA549A /* JSONValueTransformer.m in Sources */,
 				F0E6FDB71F4EC72F00BA549A /* VodPlayControlView.m in Sources */,
 				588141F21ECB0F2F0022A360 /* KSYURLTableVC.m in Sources */,
+				F0AEF15C1F666E0E0079466E /* LivePlayController.m in Sources */,
 				F07DE4F51F4D99D500370C54 /* VideoCollectionHeaderView.m in Sources */,
 				95B4A4131CC085BE00CB6804 /* KSYSQLite.m in Sources */,
 				F07DE4991F4D589F00370C54 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -989,6 +1024,7 @@
 				F07DE4A61F4D617B00370C54 /* FlowLayout.m in Sources */,
 				95B4A4121CC085BE00CB6804 /* KSYLiveVC.m in Sources */,
 				F00FDA0D1F5664290001B516 /* SpeedChoiceView.m in Sources */,
+				F0AEF1561F666DF10079466E /* PlayController.m in Sources */,
 				588141ED1ECB0F2F0022A360 /* KSYNetTrackerVC.m in Sources */,
 				F07DE4131F4C20D400370C54 /* BaseNavigationController.m in Sources */,
 				74B9ED5D1C158675003149E9 /* main.m in Sources */,

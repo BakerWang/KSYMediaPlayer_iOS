@@ -8,6 +8,8 @@
 
 #import "PlayerViewModel.h"
 #import "VideoContainerView.h"
+#import "VodPlayOperationView.h"
+#import "VodPlayController.h"
 #import "Masonry.h"
 
 @interface PlayerViewModel ()
@@ -47,6 +49,32 @@
     }
     [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
     aView.fullScreen = (orientation != UIInterfaceOrientationPortrait);
+}
+
+- (void)fullScreenHandlerForPlayController:(UIViewController *)playController
+                              isFullScreen:(BOOL) isFullScreen {
+    [playController.view removeFromSuperview];
+    UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
+    if (isFullScreen) {
+        UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
+        [keywindow addSubview:playController.view];
+        [playController.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(keywindow);
+        }];
+        orientation = UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
+    } else {
+        [_owner.view addSubview:playController.view];
+        [playController.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.top.equalTo(_owner.view);
+            make.height.mas_equalTo(211);
+        }];
+        orientation = UIInterfaceOrientationPortrait;
+    }
+    [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
+    if ([playController isKindOfClass:[VodPlayController class]]) {
+        VodPlayController *vpc = (VodPlayController *)playController;
+        vpc.fullScreen = (orientation != UIInterfaceOrientationPortrait);
+    }
 }
 
 - (VideoModel *)nextVideoModel {

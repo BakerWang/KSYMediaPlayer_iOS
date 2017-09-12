@@ -46,7 +46,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if (self.showType == VideoListShowTypeLive) {
+        self.title = @"直播";
+    } else if (self.showType == VideoListShowTypeVod) {
+        self.title = @"点播";
+    }
     [self setupUI];
     [self fetchDatasource];
 }
@@ -197,20 +201,18 @@
         return;
     }
     PlayerViewModel *playerViewModel = [[PlayerViewModel alloc] initWithPlayingVideoModel:videoModel videoListViewModel:_videoListViewModel selectedIndex:selectedIndex];
-//    PlayerViewController *pvc = [[PlayerViewController alloc] initWithPlayerViewModel:playerViewModel];
-//    self.pvc = pvc;
-//    __weak typeof(self) weakSelf = self;
-//    pvc.willDisappearBlock = ^{
-//        typeof(weakSelf) strongSelf = weakSelf;
-//        strongSelf.willAppearFromPlayerView = YES;
-//    };
-//    [self.navigationController pushViewController:pvc animated:YES];
     
-    UIViewController *desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
+    UIViewController *desVC = nil;
     if (self.showType == VideoListShowTypeLive) {
-        desVC = [[LivePlayController alloc] initWithVideoModel:videoModel];
+//        desVC = [[LivePlayController alloc] initWithVideoModel:videoModel];
+//        desVC = [[PlayController alloc] initWithVideoModel:videoModel];
+        desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
+    } else if (self.showType == VideoListShowTypeVod) {
+        desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
     }
-    [self.navigationController pushViewController:desVC animated:YES];
+    if (desVC) {
+        [self.navigationController pushViewController:desVC animated:YES];
+    }
 }
 
 #pragma mark - CollectionView Datasource and Delegate

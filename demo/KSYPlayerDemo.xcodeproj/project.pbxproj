@@ -102,6 +102,7 @@
 		F07DE4EC1F4D703F00370C54 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4D81F4D703F00370C54 /* UIView+WebCacheOperation.m */; };
 		F07DE4F21F4D999F00370C54 /* VideoCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07DE4F11F4D999F00370C54 /* VideoCollectionHeaderView.xib */; };
 		F07DE4F51F4D99D500370C54 /* VideoCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4F41F4D99D500370C54 /* VideoCollectionHeaderView.m */; };
+		F08A7A4D1F67B0D900C710BB /* LivePlayOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A7A4C1F67B0D900C710BB /* LivePlayOperationView.m */; };
 		F0AEF1561F666DF10079466E /* PlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1551F666DF10079466E /* PlayController.m */; };
 		F0AEF1591F666DFF0079466E /* VodPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1581F666DFF0079466E /* VodPlayController.m */; };
 		F0AEF15C1F666E0E0079466E /* LivePlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF15B1F666E0E0079466E /* LivePlayController.m */; };
@@ -325,6 +326,8 @@
 		F07DE4F11F4D999F00370C54 /* VideoCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCollectionHeaderView.xib; sourceTree = "<group>"; };
 		F07DE4F31F4D99D500370C54 /* VideoCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionHeaderView.h; sourceTree = "<group>"; };
 		F07DE4F41F4D99D500370C54 /* VideoCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionHeaderView.m; sourceTree = "<group>"; };
+		F08A7A4B1F67B0D900C710BB /* LivePlayOperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePlayOperationView.h; sourceTree = "<group>"; };
+		F08A7A4C1F67B0D900C710BB /* LivePlayOperationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePlayOperationView.m; sourceTree = "<group>"; };
 		F0AEF1541F666DF10079466E /* PlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayController.h; sourceTree = "<group>"; };
 		F0AEF1551F666DF10079466E /* PlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayController.m; sourceTree = "<group>"; };
 		F0AEF1571F666DFF0079466E /* VodPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodPlayController.h; sourceTree = "<group>"; };
@@ -600,6 +603,8 @@
 				F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */,
 				F0AEF1631F6692740079466E /* VodPlayOperationView.h */,
 				F0AEF1641F6692740079466E /* VodPlayOperationView.m */,
+				F08A7A4B1F67B0D900C710BB /* LivePlayOperationView.h */,
+				F08A7A4C1F67B0D900C710BB /* LivePlayOperationView.m */,
 				F07DE4A91F4D6C3300370C54 /* VideoCollectionViewCell.h */,
 				F07DE4AA1F4D6C3300370C54 /* VideoCollectionViewCell.m */,
 				F07DE4AB1F4D6C3300370C54 /* VideoCollectionViewCell.xib */,
@@ -984,6 +989,7 @@
 				588141EE1ECB0F2F0022A360 /* KSYPlayerCfgVC.m in Sources */,
 				F07DE4DC1F4D703F00370C54 /* NSImage+WebCache.m in Sources */,
 				F07DE4491F4D459300370C54 /* PlayerViewModel.m in Sources */,
+				F08A7A4D1F67B0D900C710BB /* LivePlayOperationView.m in Sources */,
 				F07DE4EA1F4D703F00370C54 /* UIImageView+WebCache.m in Sources */,
 				955FDFC61CCF3EC300B37F54 /* ViewController.m in Sources */,
 				588141EB1ECB0F2F0022A360 /* KSYFloatVC.m in Sources */,

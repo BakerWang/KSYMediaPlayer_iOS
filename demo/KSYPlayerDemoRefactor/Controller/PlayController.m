@@ -27,6 +27,10 @@
     return self;
 }
 
+- (VideoModel *)currentVideoModel {
+    return _videoModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

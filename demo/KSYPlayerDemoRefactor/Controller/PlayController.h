@@ -19,4 +19,6 @@
 
 - (void)reload:(NSURL *)aUrl;
 
+- (VideoModel *)currentVideoModel;
+
 @end

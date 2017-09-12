@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIButton           *praiseButton;
 
 @property (nonatomic, strong) UILabel            *videoTitleLab;
-@property (nonatomic, strong) VideoModel *videoModel;
+@property (nonatomic, strong) VideoModel         *videoModel;
 @end
 
 @implementation LivePlayOperationView

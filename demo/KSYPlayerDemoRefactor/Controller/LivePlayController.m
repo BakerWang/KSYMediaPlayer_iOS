@@ -16,12 +16,14 @@
 @interface LivePlayController ()
 @property (nonatomic, strong) RecordeViewController     *recordeController;
 @property (nonatomic, strong) LivePlayOperationView     *playOperationView;
+@property (nonatomic, assign) NSInteger                  rotateIndex;
 @end
 
 @implementation LivePlayController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rotateIndex = 0;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     [self setupUI];
     [self setupOperationBlock];
@@ -101,9 +103,21 @@
         [strongSelf.recordeController startRecorde];
     };
     // 镜像block
-    
+    self.playOperationView.mirrorBlock = ^{
+        typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.player.mirror = YES;
+    };
     // 画面旋转block
-    
+    self.playOperationView.pictureRotateBlock = ^{
+        typeof(weakSelf) strongSelf = weakSelf;
+        NSArray *rotates = @[@0, @90, @180, @270];
+        if (strongSelf.rotateIndex < rotates.count) {
+            strongSelf.player.rotateDegress = [rotates[strongSelf.rotateIndex] intValue];
+            strongSelf.rotateIndex += 1;
+        } else {
+            strongSelf.rotateIndex = 0;
+        }
+    };
     // 音量调节block
     
     // 点赞block

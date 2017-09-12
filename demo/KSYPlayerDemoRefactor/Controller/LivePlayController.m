@@ -24,6 +24,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     [self setupUI];
+    [self setupOperationBlock];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

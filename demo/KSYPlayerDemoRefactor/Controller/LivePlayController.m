@@ -10,6 +10,8 @@
 #import "RecordeViewController.h"
 #import "LivePlayOperationView.h"
 #import "KSYUIVC.h"
+#import "AppDelegate.h"
+#import "PlayerViewModel.h"
 
 @interface LivePlayController ()
 @property (nonatomic, strong) RecordeViewController     *recordeController;
@@ -20,16 +22,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     [self setupUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.allowRotation = YES;
 }
 
 - (void)dealloc {
     NSLog(@"LivePlayController dealloced");
+}
+
+- (void)setFullScreen:(BOOL)fullScreen {
+    self.playOperationView.fullScreen = fullScreen;
+}
+
+- (void)statusBarOrientationChange:(NSNotification *)notification {
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    BOOL fullScreen = (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft);
+    [self.playerViewModel fullScreenHandlerForLivePlayController:self isFullScreen:fullScreen];
 }
 
 - (void)setupUI {

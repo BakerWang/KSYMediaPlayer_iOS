@@ -8,6 +8,12 @@
 
 #import "PlayController.h"
 
+@class PlayerViewModel;
+
 @interface LivePlayController : PlayController
+
+@property (nonatomic, strong) PlayerViewModel      *playerViewModel;
+
+@property (nonatomic, assign) BOOL fullScreen;
 
 @end

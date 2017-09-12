@@ -10,6 +10,7 @@
 #import "VideoContainerView.h"
 #import "VodPlayOperationView.h"
 #import "VodPlayController.h"
+#import "LivePlayController.h"
 #import "Masonry.h"
 
 @interface PlayerViewModel ()
@@ -76,6 +77,22 @@
     [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
     if ([playController isKindOfClass:[VodPlayController class]]) {
         VodPlayController *vpc = (VodPlayController *)playController;
+        vpc.fullScreen = (orientation != UIInterfaceOrientationPortrait);
+    } 
+}
+
+- (void)fullScreenHandlerForLivePlayController:(LivePlayController *)playController
+                                  isFullScreen:(BOOL) isFullScreen {
+    
+    UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
+    if (isFullScreen) {
+        orientation = UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
+    } else {
+        orientation = UIInterfaceOrientationPortrait;
+    }
+    [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
+    if ([playController isKindOfClass:[LivePlayController class]]) {
+        LivePlayController *vpc = (LivePlayController *)playController;
         vpc.fullScreen = (orientation != UIInterfaceOrientationPortrait);
     }
 }

@@ -12,6 +12,8 @@
 
 @interface LivePlayOperationView : BaseView
 
+@property (nonatomic, assign, getter=isFullScreen) BOOL  fullScreen;
+
 @property (nonatomic, copy) void(^playStateBlock)(VCPlayHandlerState);
 @property (nonatomic, copy) void(^screenShotBlock)(void);
 @property (nonatomic, copy) void(^screenRecordeBlock)(void);

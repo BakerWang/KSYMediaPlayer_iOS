@@ -205,8 +205,8 @@
     UIViewController *desVC = nil;
     if (self.showType == VideoListShowTypeLive) {
         desVC = [[LivePlayController alloc] initWithVideoModel:videoModel];
-//        desVC = [[PlayController alloc] initWithVideoModel:videoModel];
-//        desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
+        LivePlayController *lpc = (LivePlayController *)desVC;
+        lpc.playerViewModel = playerViewModel;
     } else if (self.showType == VideoListShowTypeVod) {
         desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
     }

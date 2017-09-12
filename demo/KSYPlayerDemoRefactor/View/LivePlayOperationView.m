@@ -11,6 +11,7 @@
 #import "VideoModel.h"
 
 @interface LivePlayOperationView ()
+@property (nonatomic, strong) UIView             *aTopMaskView;
 @property (nonatomic, strong) UIButton           *backButton;
 @property (nonatomic, strong) UIButton           *screenShotButton;
 @property (nonatomic, strong) UIButton           *screenRecordButton;
@@ -38,19 +39,38 @@
     NSLog(@"LivePlayOperationView dealloced");
 }
 
+- (void)setFullScreen:(BOOL)fullScreen {
+    _fullScreen = fullScreen;
+    [self updateConstraintsHandler];
+//    self.aTopMaskView.hidden = !fullScreen;
+}
+
+- (void)tapFullScreenMaskViewHandler {
+    
+}
+
 #pragma mark --
 #pragma mark -- UI metohd
 
 - (void)setupUI {
+//    [self addSubview:self.aTopMaskView];
     [self addSubview:self.backButton];
+    [self addSubview:self.videoTitleLab];
     [self addSubview:self.screenShotButton];
     [self addSubview:self.screenRecordButton];
     [self addSubview:self.mirrorImageButton];
     [self addSubview:self.pictureRotateButton];
     [self addSubview:self.volumeButton];
     [self addSubview:self.praiseButton];
-    [self addSubview:self.videoTitleLab];
     [self configeConstraints];
+}
+
+- (UIView *)aTopMaskView {
+    if (!_aTopMaskView) {
+        _aTopMaskView = [[UIView alloc] init];
+        _aTopMaskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    }
+    return _aTopMaskView;
 }
 
 - (UIButton *)backButton {
@@ -184,21 +204,25 @@
 #pragma mark - confige constraints
 
 - (void)configeConstraints {
-    [self.backButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+//    [self.aTopMaskView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.leading.top.trailing.equalTo(self);
+//        make.height.mas_equalTo(57);
+//    }];
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.equalTo(self);
         make.width.height.mas_equalTo(60);
     }];
-    [self.videoTitleLab mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.videoTitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(31);
         make.centerY.equalTo(self.backButton);
     }];
     
-    [self.screenRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.screenRecordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(self.mas_trailing).offset(-6);
         make.bottom.equalTo(self.mas_centerY).offset(-15);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
-    [self.mirrorImageButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.mirrorImageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(self.mas_trailing).offset(-6);
         make.top.equalTo(self.mas_centerY).offset(15);
         make.size.mas_equalTo(CGSizeMake(50, 50));
@@ -223,6 +247,56 @@
         make.right.equalTo(self.praiseButton.mas_left).offset(-23);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
+}
+
+- (void)updateConstraintsHandler {
+//    [self.aTopMaskView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(self.mas_top);
+//    }];
+
+    if (_fullScreen) {
+        [self.screenRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.top.equalTo(self.mas_centerY).offset(15);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.mirrorImageButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.mas_equalTo(6);
+            make.centerY.equalTo(self.screenShotButton);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.screenShotButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.bottom.equalTo(self.mas_centerY).offset(-15);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.pictureRotateButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.mas_equalTo(6);
+            make.centerY.equalTo(self.screenRecordButton);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+    } else {
+        [self.screenRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.bottom.equalTo(self.mas_centerY).offset(-15);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.mirrorImageButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.top.equalTo(self.mas_centerY).offset(15);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.screenShotButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.bottom.equalTo(self.screenRecordButton.mas_top).offset(-30);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+        [self.pictureRotateButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.mas_trailing).offset(-6);
+            make.top.equalTo(self.mirrorImageButton.mas_bottom).offset(30);
+            make.size.mas_equalTo(CGSizeMake(50, 50));
+        }];
+    }
 }
 
 @end

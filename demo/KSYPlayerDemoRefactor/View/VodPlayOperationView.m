@@ -11,6 +11,7 @@
 #import "DefinitionMenuView.h"
 #import "SpeedChoiceView.h"
 #import "VideoModel.h"
+#import "UpdateVolumeAndBrightView.h"
 
 @interface VodPlayOperationView ()
 @property (nonatomic, strong) VodPlayControlView *playControlView;
@@ -29,6 +30,7 @@
 @property (nonatomic, assign) NSTimeInterval playedTime;
 @property (nonatomic, strong) VideoModel *videoModel;
 @property (nonatomic, copy)   void(^fullScreenBlock)(BOOL isFullScreen);
+@property (nonatomic, strong) UpdateVolumeAndBrightView *volumeBrightControlView;
 @end
 
 @implementation VodPlayOperationView
@@ -58,6 +60,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aTapEv)];
     [self addGestureRecognizer:tap];
     
+    [self addSubview:self.volumeBrightControlView];
     [self addSubview:self.aTopMaskView];
     [self addSubview:self.backButton];
     [self addSubview:self.moreButton];
@@ -73,6 +76,14 @@
     self.moreButton.hidden = YES;
     self.screenShotButton.hidden = YES;
     self.screenRecordButton.hidden = YES;
+    self.videoTitleLab.hidden = YES;
+}
+
+- (UpdateVolumeAndBrightView *)volumeBrightControlView {
+    if (!_volumeBrightControlView) {
+        _volumeBrightControlView = [[UpdateVolumeAndBrightView alloc] init];
+    }
+    return _volumeBrightControlView;
 }
 
 - (VodPlayControlView *)playControlView {
@@ -187,6 +198,9 @@
 }
 
 - (void)configeConstraints {
+    [_volumeBrightControlView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
     [self.aTopMaskView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.trailing.equalTo(self);
         make.height.mas_equalTo(57);

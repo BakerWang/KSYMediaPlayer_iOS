@@ -9,11 +9,13 @@
 #import "PlayController.h"
 #import "VideoModel.h"
 #import "AppDelegate.h"
+#import "RecordeViewController.h"
 
 @interface PlayController ()
-@property (nonatomic, weak) VideoModel               *videoModel;
+@property (nonatomic, strong) VideoModel               *videoModel;
 @property (nonatomic, assign) int64_t   prepared_time;
 @property (nonatomic, assign) NSTimeInterval playedTime;
+@property (nonatomic, strong) RecordeViewController     *recordeController;
 @end
 
 @implementation PlayController
@@ -45,6 +47,7 @@
     [self setupObservers:_player];
     _player.controlStyle = MPMovieControlStyleNone;
     [self.view addSubview:_player.view];
+    
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];

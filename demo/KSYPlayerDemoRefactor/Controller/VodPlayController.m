@@ -11,11 +11,13 @@
 #import "PlayerViewModel.h"
 #import "VideoModel.h"
 #import "KSYUIVC.h"
+#import "RecordeViewController.h"
 
 @interface VodPlayController ()
-@property (nonatomic, assign) BOOL                  switchingDefination;
-@property (nonatomic, assign) NSTimeInterval        playedTime;
-@property (nonatomic, strong) VodPlayOperationView *playOperationView;
+@property (nonatomic, assign) BOOL                       switchingDefination;
+@property (nonatomic, assign) NSTimeInterval             playedTime;
+@property (nonatomic, strong) VodPlayOperationView      *playOperationView;
+@property (nonatomic, strong) RecordeViewController     *recordeController;
 @end
 
 @implementation VodPlayController
@@ -27,7 +29,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog(@"dealloc");
 }
 
 - (void)setupUI {
@@ -51,6 +53,16 @@
 - (void)setupOperationBlock  {
     
     __weak typeof(self) weakSelf = self;
+    
+    self.recordeController = [[RecordeViewController alloc] initWithPlayer:self.player screenRecordeFinishedBlock:^{
+        typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.view sendSubviewToBack:strongSelf.playOperationView];
+        [strongSelf.view sendSubviewToBack:strongSelf.player.view];
+        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+        if (orientation == UIDeviceOrientationPortrait) {
+            [strongSelf.playerViewModel fullScreenHandlerForPlayController:strongSelf isFullScreen:NO];
+        }
+    }];
     
     self.playOperationView.playStateBlock = ^(VCPlayHandlerState state) {
         typeof(weakSelf) strongSelf = weakSelf;
@@ -102,15 +114,15 @@
         [KSYUIVC saveImageToPhotosAlbum:thumbnailImage];
     };
     self.playOperationView.screenRecordeBlock = ^{
-//        typeof(weakSelf) strongSelf = weakSelf;
+        typeof(weakSelf) strongSelf = weakSelf;
 //        [strongSelf.playOperationView bringSubviewToFront:strongSelf.player.view];
 //        [strongSelf.playOperationView bringSubviewToFront:strongSelf.volumeBrightControlView];
-//        [strongSelf.playOperationView addSubview:strongSelf.recordeController.view];
-//        [strongSelf addChildViewController:strongSelf.recordeController];
-//        [strongSelf.recordeController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(strongSelf.videoContainerView);
-//        }];
-//        [strongSelf.recordeController startRecorde];
+        [strongSelf.view addSubview:strongSelf.recordeController.view];
+        [strongSelf addChildViewController:strongSelf.recordeController];
+        [strongSelf.recordeController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(strongSelf.view);
+        }];
+        [strongSelf.recordeController startRecorde];
     };
     
     [self.playOperationView configeVideoModel:self.playerViewModel.playingVideoModel];

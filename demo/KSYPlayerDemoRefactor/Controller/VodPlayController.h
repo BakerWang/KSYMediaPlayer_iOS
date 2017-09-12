@@ -12,7 +12,7 @@
 
 @interface VodPlayController : PlayController
 
-@property (nonatomic, weak) PlayerViewModel      *playerViewModel;
+@property (nonatomic, strong) PlayerViewModel      *playerViewModel;
 
 @property (nonatomic, assign) BOOL fullScreen;
 

@@ -37,7 +37,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog(@"VodListPlayController dealloced");
 }
 
 - (void)viewWillAppear:(BOOL)animated {

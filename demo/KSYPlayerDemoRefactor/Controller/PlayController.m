@@ -51,12 +51,11 @@
     [self setupObservers:_player];
     _player.controlStyle = MPMovieControlStyleNone;
     [self.view addSubview:_player.view];
-    
     [_player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     
-    _player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    _player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     SettingModel *settingModel = delegate.settingModel;

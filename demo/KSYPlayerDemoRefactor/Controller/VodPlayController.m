@@ -29,7 +29,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"dealloc");
+    NSLog(@"VodPlayController dealloced");
 }
 
 - (void)setupUI {

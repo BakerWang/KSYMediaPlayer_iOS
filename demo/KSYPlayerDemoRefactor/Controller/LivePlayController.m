@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setupUI];
+    [self setupUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -54,10 +54,10 @@
         typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.view sendSubviewToBack:strongSelf.playOperationView];
         [strongSelf.view sendSubviewToBack:strongSelf.player.view];
-//        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-//        if (orientation == UIDeviceOrientationPortrait) {
+        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+        if (orientation == UIDeviceOrientationPortrait) {
 //            [strongSelf.playerViewModel fullScreenHandlerForPlayController:strongSelf isFullScreen:NO];
-//        }
+        }
     }];
     
     self.playOperationView.playStateBlock = ^(VCPlayHandlerState state) {
@@ -84,6 +84,13 @@
         }];
         [strongSelf.recordeController startRecorde];
     };
+    // 镜像block
+    
+    // 画面旋转block
+    
+    // 音量调节block
+    
+    // 点赞block
 }
 
 #pragma mark --

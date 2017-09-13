@@ -57,7 +57,7 @@
 - (void)setupUI {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aTapEv)];
     [self addGestureRecognizer:tap];
-//    [self addSubview:self.aTopMaskView];
+    [self addSubview:self.aTopMaskView];
     [self addSubview:self.backButton];
     [self addSubview:self.videoTitleLab];
     [self addSubview:self.screenShotButton];
@@ -76,6 +76,9 @@
     if (!self.volumeView.hidden) {
         self.volumeView.hidden = YES;
     }
+    self.aTopMaskView.hidden = !self.aTopMaskView.hidden;
+    self.backButton.hidden = self.aTopMaskView.hidden;
+    self.videoTitleLab.hidden = self.aTopMaskView.hidden;
 }
 
 - (UIView *)aTopMaskView {
@@ -224,10 +227,10 @@
 #pragma mark - confige constraints
 
 - (void)configeConstraints {
-//    [self.aTopMaskView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.top.trailing.equalTo(self);
-//        make.height.mas_equalTo(57);
-//    }];
+    [self.aTopMaskView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.leading.top.trailing.equalTo(self);
+        make.height.mas_equalTo(57);
+    }];
     [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.top.equalTo(self);
         make.width.height.mas_equalTo(60);

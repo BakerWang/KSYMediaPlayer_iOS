@@ -36,6 +36,15 @@
     delegate.allowRotation = YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.allowRotation = NO;
+    if (self.willDisappearBlocked) {
+        self.willDisappearBlocked();
+    }
+}
+
 - (void)dealloc {
     NSLog(@"LivePlayController dealloced");
 }
@@ -93,8 +102,6 @@
     };
     self.playOperationView.screenRecordeBlock = ^{
         typeof(weakSelf) strongSelf = weakSelf;
-        //        [strongSelf.playOperationView bringSubviewToFront:strongSelf.player.view];
-        //        [strongSelf.playOperationView bringSubviewToFront:strongSelf.volumeBrightControlView];
         [strongSelf.view addSubview:strongSelf.recordeController.view];
         [strongSelf addChildViewController:strongSelf.recordeController];
         [strongSelf.recordeController.view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -168,6 +175,21 @@
             
         }
     }
+}
+
+#pragma mark ------
+#pragma mark - public method
+
+- (void)recoveryHandler {
+    [self.playOperationView recoveryHandler];
+}
+
+- (void)suspendHandler {
+    [self.playOperationView suspendHandler];
+}
+
+- (void)stopSuspend {
+    [self.player stop];
 }
 
 @end

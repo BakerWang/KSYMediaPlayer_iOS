@@ -16,4 +16,12 @@
 
 @property (nonatomic, assign) BOOL fullScreen;
 
+@property (nonatomic, copy) void(^willDisappearBlocked)(void);
+
+- (void)recoveryHandler;
+
+- (void)suspendHandler;
+
+- (void)stopSuspend;
+
 @end

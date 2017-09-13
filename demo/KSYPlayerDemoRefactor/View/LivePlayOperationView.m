@@ -44,7 +44,6 @@
 - (void)setFullScreen:(BOOL)fullScreen {
     _fullScreen = fullScreen;
     [self updateConstraintsHandler];
-//    self.aTopMaskView.hidden = !fullScreen;
 }
 
 - (void)tapFullScreenMaskViewHandler {
@@ -279,10 +278,6 @@
 }
 
 - (void)updateConstraintsHandler {
-//    [self.aTopMaskView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(self.mas_top);
-//    }];
-
     if (_fullScreen) {
         [self.screenRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.trailing.equalTo(self.mas_trailing).offset(-6);
@@ -326,6 +321,19 @@
             make.size.mas_equalTo(CGSizeMake(50, 50));
         }];
     }
+}
+
+#pragma mark -------
+#pragma mark - public method
+
+- (void)recoveryHandler {
+    self.backButton.hidden = NO;
+    self.userInteractionEnabled = YES;
+}
+
+- (void)suspendHandler {
+    self.backButton.hidden = YES;
+    self.userInteractionEnabled = NO;
 }
 
 @end

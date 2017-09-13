@@ -26,37 +26,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIView *aView = [[UIView alloc] init];
-    self.tableView.tableFooterView = aView;
+//    UIView *aView = [[UIView alloc] init];
+//    self.tableView.tableFooterView = aView;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self defaultSettingHandler];
 }
+
+- (void)defaultSettingHandler {
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    SettingModel *model = delegate.settingModel;
+    
+    self.bufferTimeTextField.text = [NSString stringWithFormat:@"%zd", model.bufferTimeMax];
+    self.bufferSizeTextField.text = [NSString stringWithFormat:@"%zd", model.bufferSizeMax];
+    self.prepareTimeoutTextField.text = [NSString stringWithFormat:@"%zd", model.preparetimeOut];
+    self.readTimeoutTextField.text = [NSString stringWithFormat:@"%zd", model.readtimeOut];
+    self.loopPlaySwitch.on = model.shouldLoop;
+    self.hardDecodeButton.selected = (model.videoDecoderMode == MPMovieVideoDecoderMode_Hardware);
+    self.softDecodeButton.selected = (model.videoDecoderMode == MPMovieVideoDecoderMode_Software);
+}
+
 - (IBAction)popBackAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-/*
- @property (nonatomic, assign) MPMovieVideoDecoderMode videoDecoderMode;
- 
- @property (nonatomic, assign) NSTimeInterval bufferTimeMax;
- 
- @property (nonatomic, assign) NSTimeInterval bufferSizeMax;
- 
- @property (nonatomic, assign) NSInteger preparetimeOut;
- 
- @property (nonatomic, assign) NSInteger readtimeOut;
- 
- @property (nonatomic, assign) BOOL  shouldLoop;
- */
+
 - (IBAction)confirmAction:(id)sender {
-    SettingModel *model = [[SettingModel alloc] init];
+    
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    SettingModel *model = delegate.settingModel;
     model.videoDecoderMode = self.hardDecodeButton.selected ? MPMovieVideoDecoderMode_Hardware : MPMovieVideoDecoderMode_Software;
     model.bufferTimeMax = [[self.bufferTimeTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] doubleValue];
     model.bufferSizeMax = [[self.bufferSizeTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] doubleValue];
     model.preparetimeOut = [[self.prepareTimeoutTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] integerValue];
     model.readtimeOut = [[self.readTimeoutTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] integerValue];
     model.shouldLoop = self.loopPlaySwitch.on;
-
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    delegate.settingModel = model;
+    
     [self hideKeyboard];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)hardDecodeAction:(id)sender {
     self.hardDecodeButton.selected = YES;

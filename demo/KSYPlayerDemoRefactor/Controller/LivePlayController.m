@@ -126,6 +126,16 @@
 #pragma mark - notification handler
 
 -(void)handlePlayerNotify:(NSNotification*)notify {
+    if (MPMovieNaturalSizeAvailableNotification ==  notify.name) {
+        if(((self.player.naturalRotate / 90) % 2  == 0 && self.player.naturalSize.width > self.player.naturalSize.height) ||
+           ((self.player.naturalRotate / 90) % 2 != 0 && self.player.naturalSize.width < self.player.naturalSize.height))
+        {
+            //如果想要在宽大于高的时候横屏播放，你可以在这里旋转
+            UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
+            orientation = UIInterfaceOrientationLandscapeRight;
+            [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
+        }
+    }
     [self notifyHandler:notify];
 }
 

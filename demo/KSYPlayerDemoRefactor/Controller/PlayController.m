@@ -19,9 +19,7 @@
 @property (nonatomic, strong) RecordeViewController     *recordeController;
 
 @property (nonatomic, strong) UILabel                   *labelStat;
-//@property (nonatomic, strong) UITextView                *labelStat;
 @property (nonatomic, strong) UILabel                   *labelMsg;
-@property (nonatomic, strong) UILabel                   *labelSubtitle;
 @property (nonatomic, strong) NSTimer                   *timer;
 @property (nonatomic, strong) KSYReachability           *reach;
 @property (nonatomic, assign) KSYNetworkStatus           preStatue;
@@ -159,10 +157,6 @@
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     SettingModel *settingModel = delegate.settingModel;
-    if (!settingModel) {
-        settingModel = [[SettingModel alloc] init];
-        delegate.settingModel = settingModel;
-    }
     
     if(settingModel) {
         _player.videoDecoderMode = settingModel.videoDecoderMode;
@@ -309,13 +303,6 @@
     {
         NSLog(@"Seek complete");
     }
-    
-    //    if (MPMoviePlayerPlaybackTimedTextNotification == notify.name)
-    //    {
-    //        NSString *timedText = [[notify userInfo] valueForKey:MPMoviePlayerPlaybackTimedTextUserInfoKey];
-    //        NSDictionary *attrs = @{NSFontAttributeName : _labelSubtitle.font};
-    //        self.labelSubtitle.text = timedText;
-    //    }
 }
 
 -(void)handlePlayerNotify:(NSNotification*)notify {}
@@ -439,15 +426,6 @@
     else
         netString = @"Unknown";
     return netString;
-}
-
-- (void)updateMsg : (NSString *)msgString {
-    if(_msgNum == 0)
-        self.labelMsg.text = @"message is : \n";
-    self.labelMsg.text = [_labelMsg.text stringByAppendingString:@"\n"];
-    self.labelMsg.text = [_labelMsg.text stringByAppendingString:msgString];
-    if(++self.msgNum >= 3)
-        self.msgNum  = 0;
 }
 
 - (NSTimeInterval) getCurrentTime{

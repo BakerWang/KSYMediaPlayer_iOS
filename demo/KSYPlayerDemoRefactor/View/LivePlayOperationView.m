@@ -8,6 +8,7 @@
 
 #import "LivePlayOperationView.h"
 #import "UpdateVolumeAndBrightView.h"
+#import "LiveVolumeView.h"
 #import "VideoModel.h"
 
 @interface LivePlayOperationView ()
@@ -22,6 +23,7 @@
 @property (nonatomic, strong) UIButton           *praiseButton;
 
 @property (nonatomic, strong) UILabel            *videoTitleLab;
+@property (nonatomic, strong) LiveVolumeView     *volumeView;
 @property (nonatomic, strong) VideoModel         *videoModel;
 @end
 
@@ -53,6 +55,8 @@
 #pragma mark -- UI metohd
 
 - (void)setupUI {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(aTapEv)];
+    [self addGestureRecognizer:tap];
 //    [self addSubview:self.aTopMaskView];
     [self addSubview:self.backButton];
     [self addSubview:self.videoTitleLab];
@@ -61,8 +65,17 @@
     [self addSubview:self.mirrorImageButton];
     [self addSubview:self.pictureRotateButton];
     [self addSubview:self.volumeButton];
+    [self addSubview:self.volumeView];
     [self addSubview:self.praiseButton];
     [self configeConstraints];
+    
+    self.volumeView.hidden = YES;
+}
+
+- (void)aTapEv {
+    if (!self.volumeView.hidden) {
+        self.volumeView.hidden = YES;
+    }
 }
 
 - (UIView *)aTopMaskView {
@@ -148,6 +161,13 @@
     return _videoTitleLab;
 }
 
+- (LiveVolumeView *)volumeView {
+    if (!_volumeView) {
+        _volumeView = [[LiveVolumeView alloc] init];
+    }
+    return _volumeView;
+}
+
 #pragma mark ------
 #pragma mark - button clicked event
 
@@ -191,7 +211,7 @@
 }
 
 - (void)volumeAdjustHandler {
-    
+    self.volumeView.hidden = !self.volumeView.hidden;
 }
 
 - (void)praiseHandler {
@@ -246,6 +266,12 @@
         make.centerY.equalTo(self.praiseButton);
         make.right.equalTo(self.praiseButton.mas_left).offset(-23);
         make.size.mas_equalTo(CGSizeMake(50, 50));
+    }];
+    [self.volumeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.mas_equalTo(-2);
+        make.height.mas_equalTo(50);
+        make.centerX.equalTo(self.volumeButton);
+        make.bottom.equalTo(self.volumeButton.mas_top).offset(-10);
     }];
 }
 

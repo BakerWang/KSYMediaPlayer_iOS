@@ -118,7 +118,6 @@
             strongSelf.rotateIndex = 0;
         }
     };
-    // 音量调节block
     
     // 点赞block
 }
@@ -126,100 +125,8 @@
 #pragma mark --
 #pragma mark - notification handler
 
--(void)handlePlayerNotify:(NSNotification*)notify
-{
-    if (!self.player) {
-        return;
-    }
-    if (MPMediaPlaybackIsPreparedToPlayDidChangeNotification ==  notify.name) {
-        if(self.player.shouldAutoplay == NO)
-            [self.player play];
-    }
-    /*
-     if (MPMoviePlayerPlaybackStateDidChangeNotification ==  notify.name) {
-     NSLog(@"------------------------");
-     NSLog(@"player playback state: %ld", (long)_player.playbackState);
-     NSLog(@"------------------------");
-     }
-     if (MPMoviePlayerLoadStateDidChangeNotification ==  notify.name) {
-     NSLog(@"player load state: %ld", (long)_player.loadState);
-     if (MPMovieLoadStateStalled & _player.loadState) {
-     NSLog(@"player start caching");
-     }
-     if (_player.bufferEmptyCount &&
-     (MPMovieLoadStatePlayable & _player.loadState ||
-     MPMovieLoadStatePlaythroughOK & _player.loadState)){
-     NSLog(@"player finish caching");
-     NSString *message = [[NSString alloc]initWithFormat:@"loading occurs, %d - %0.3fs",
-     (int)_player.bufferEmptyCount,
-     _player.bufferEmptyDuration];
-     [self toast:message];
-     }
-     }
-     if (MPMoviePlayerPlaybackDidFinishNotification ==  notify.name) {
-     NSLog(@"player finish state: %ld", (long)_player.playbackState);
-     NSLog(@"player download flow size: %f MB", _player.readSize);
-     NSLog(@"buffer monitor  result: \n   empty count: %d, lasting: %f seconds",
-     (int)_player.bufferEmptyCount,
-     _player.bufferEmptyDuration);
-     }
-     if (MPMovieNaturalSizeAvailableNotification ==  notify.name) {
-     NSLog(@"video size %.0f-%.0f, rotate:%ld\n", _player.naturalSize.width, _player.naturalSize.height, (long)_player.naturalRotate);
-     if(((_player.naturalRotate / 90) % 2  == 0 && _player.naturalSize.width > _player.naturalSize.height) ||
-     ((_player.naturalRotate / 90) % 2 != 0 && _player.naturalSize.width < _player.naturalSize.height))
-     {
-     如果想要在宽大于高的时候横屏播放，你可以在这里旋转
-     }
-     }
-     if (MPMoviePlayerFirstVideoFrameRenderedNotification == notify.name)
-     {
-     fvr_costtime = (int)((long long int)([self getCurrentTime] * 1000) - prepared_time);
-     NSLog(@"first video frame show, cost time : %dms!\n", fvr_costtime);
-     }
-     if (MPMoviePlayerFirstAudioFrameRenderedNotification == notify.name)
-     {
-     far_costtime = (int)((long long int)([self getCurrentTime] * 1000) - prepared_time);
-     NSLog(@"first audio frame render, cost time : %dms!\n", far_costtime);
-     }
-     if (MPMoviePlayerSuggestReloadNotification == notify.name)
-     {
-     NSLog(@"suggest using reload function!\n");
-     if(!reloading)
-     {
-     reloading = YES;
-     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(){
-     if (_player) {
-     NSLog(@"reload stream");
-     [_player reload:_reloadUrl flush:YES mode:MPMovieReloadMode_Accurate];
-     }
-     });
-     }
-     }
-     if(MPMoviePlayerPlaybackStatusNotification == notify.name)
-     {
-     int status = [[[notify userInfo] valueForKey:MPMoviePlayerPlaybackStatusUserInfoKey] intValue];
-     if(MPMovieStatusVideoDecodeWrong == status)
-     NSLog(@"Video Decode Wrong!\n");
-     else if(MPMovieStatusAudioDecodeWrong == status)
-     NSLog(@"Audio Decode Wrong!\n");
-     else if (MPMovieStatusHWCodecUsed == status )
-     NSLog(@"Hardware Codec used\n");
-     else if (MPMovieStatusSWCodecUsed == status )
-     NSLog(@"Software Codec used\n");
-     else if(MPMovieStatusDLCodecUsed == status)
-     NSLog(@"AVSampleBufferDisplayLayer  Codec used");
-     }
-     if(MPMoviePlayerNetworkStatusChangeNotification == notify.name)
-     {
-     int currStatus = [[[notify userInfo] valueForKey:MPMoviePlayerCurrNetworkStatusUserInfoKey] intValue];
-     int lastStatus = [[[notify userInfo] valueForKey:MPMoviePlayerLastNetworkStatusUserInfoKey] intValue];
-     NSLog(@"network reachable change from %@ to %@\n", [self netStatus2Str:lastStatus], [self netStatus2Str:currStatus]);
-     }
-     if(MPMoviePlayerSeekCompleteNotification == notify.name)
-     {
-     NSLog(@"Seek complete");
-     }
-     */
+-(void)handlePlayerNotify:(NSNotification*)notify {
+    [self notifyHandler:notify];
 }
 
 #pragma mark --

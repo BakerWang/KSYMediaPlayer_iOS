@@ -15,10 +15,16 @@
 
 @property (nonatomic, strong) KSYMoviePlayerController *player;
 
+// 网络状态
+@property NSString* networkStatus;
+@property(nonatomic, copy) void(^onNetworkChange)(NSString* msg);
+
 - (instancetype)initWithVideoModel:(VideoModel *)videoModel;
 
 - (void)reload:(NSURL *)aUrl;
 
 - (VideoModel *)currentVideoModel;
+
+- (void)notifyHandler:(NSNotification*)notify;
 
 @end

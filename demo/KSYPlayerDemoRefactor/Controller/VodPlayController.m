@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupUI];
     [self setupOperationBlock];
 }
@@ -149,6 +150,7 @@
         if(self.player.shouldAutoplay == NO)
             [self.player play];
     }
+    [self notifyHandler:notify];
     /*
      if (MPMoviePlayerPlaybackStateDidChangeNotification ==  notify.name) {
      NSLog(@"------------------------");

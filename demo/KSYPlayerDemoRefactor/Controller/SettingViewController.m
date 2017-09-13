@@ -26,9 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    UIView *aView = [[UIView alloc] init];
-//    self.tableView.tableFooterView = aView;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    UIView *aView = [[UIView alloc] init];
+    self.tableView.tableFooterView = aView;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self defaultSettingHandler];
 }
 

@@ -8,10 +8,19 @@
 
 #import "BaseViewController.h"
 
-@class PlayerViewModel;
+@class PlayerViewModel, VodPlayController;
 
 @interface VodListPlayController : BaseViewController
 
-- (instancetype)initWithPlayerViewModel:(PlayerViewModel *)playerViewModel;
+@property (nonatomic, strong) VodPlayController        *playVC;
+
+@property (nonatomic, copy) void(^willDisappearBlocked)(void);
+
+- (instancetype)initWithPlayerViewModel:(PlayerViewModel *)playerViewModel
+                            suspendView:(UIView *)suspendView;
+
+- (void)pushFromSuspendHandler;
+
+- (void)recoveryHandler;
 
 @end

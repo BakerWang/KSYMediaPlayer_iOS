@@ -270,4 +270,19 @@
     }
 }
 
+#pragma mark ------
+#pragma mark - public method
+
+- (void)suspendHandler {
+    [self.playOperationView suspendHandler];
+}
+
+- (void)recoveryHandler {
+    [self.playOperationView recoveryHandler];
+}
+
+- (void)stopSuspend {
+    [self.player stop];
+}
+
 @end

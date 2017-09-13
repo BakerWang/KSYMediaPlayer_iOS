@@ -16,4 +16,10 @@
 
 @property (nonatomic, assign) BOOL fullScreen;
 
+- (void)suspendHandler;
+
+- (void)recoveryHandler;
+
+- (void)stopSuspend;
+
 @end

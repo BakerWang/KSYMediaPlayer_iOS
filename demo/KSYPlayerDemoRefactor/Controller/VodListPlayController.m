@@ -15,16 +15,19 @@
 
 @interface VodListPlayController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) PlayerViewModel          *playerViewModel;
-@property (nonatomic, strong) VodPlayController        *playVC;
+//@property (nonatomic, strong) VodPlayController        *playVC;
 @property (nonatomic, strong) UITableView              *videoTableView;
+@property (nonatomic, weak)   UIView                   *suspendView;
 @end
 
 @implementation VodListPlayController
 
-- (instancetype)initWithPlayerViewModel:(PlayerViewModel *)playerViewModel {
+- (instancetype)initWithPlayerViewModel:(PlayerViewModel *)playerViewModel
+                            suspendView:(UIView *)suspendView {
     if (self = [super init]) {
         _playerViewModel = playerViewModel;
         _playerViewModel.owner = self;
+        _suspendView = suspendView;
     }
     return self;
 }
@@ -36,8 +39,13 @@
     [self setupUI];
 }
 
-- (void)dealloc {
-    NSLog(@"VodListPlayController dealloced");
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    delegate.allowRotation = NO;
+    if (self.willDisappearBlocked) {
+        self.willDisappearBlocked();
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,6 +53,10 @@
     self.navigationController.navigationBarHidden = YES;
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.allowRotation = YES;
+}
+
+- (void)dealloc {
+    NSLog(@"VodListPlayController dealloced");
 }
 
 - (void)setupUI {
@@ -117,6 +129,23 @@
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     BOOL fullScreen = (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft);
     [self.playerViewModel fullScreenHandlerForPlayController:self.playVC isFullScreen:fullScreen];
+}
+
+#pragma mark -----
+#pragma mark - public method
+
+- (void)pushFromSuspendHandler {
+    [self.view addSubview:self.playVC.view];
+    [self addChildViewController:self.playVC];
+    
+    [self.playVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.equalTo(self.view);
+        make.height.mas_equalTo(211);
+    }];
+}
+
+- (void)recoveryHandler {
+    [self.playVC recoveryHandler];
 }
 
 @end

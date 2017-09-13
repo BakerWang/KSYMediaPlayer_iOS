@@ -22,13 +22,17 @@
 
 #import "VodListPlayController.h"
 #import "LivePlayController.h"
+#import "VodPlayController.h"
 
 @interface VideoListShowController ()
 <UICollectionViewDataSource, UICollectionViewDelegate, FlowLayoutDelegate>
 @property (nonatomic, strong) VideoListViewModel        *videoListViewModel;
 @property (nonatomic, strong) UICollectionView          *videoCollectionView;
 @property (nonatomic, strong) VideoCollectionHeaderView *headerView;
+
 @property (nonatomic, strong) PlayerViewController      *pvc;
+@property (nonatomic, strong) VodPlayController         *vodPlayVC;
+
 @property (nonatomic, strong) SuspendPlayView           *suspendView;
 @property (nonatomic, strong) UIView                    *clearView;
 @property (nonatomic, assign) BOOL willAppearFromPlayerView;
@@ -67,14 +71,14 @@
         self.suspendView.frame = CGRectMake(0, 0, 200, 113);
         self.suspendView.center = self.view.center;
         
-        [self.pvc.videoContainerView removeFromSuperview];
-        [self.suspendView addSubview:self.pvc.videoContainerView];
-        [self.suspendView sendSubviewToBack:self.pvc.videoContainerView];
-        [self.pvc.videoContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.vodPlayVC.view removeFromSuperview];
+        [self.suspendView addSubview:self.vodPlayVC.view];
+        [self.suspendView sendSubviewToBack:self.vodPlayVC.view];
+        [self.vodPlayVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.suspendView);
         }];
-        [self addChildViewController:self.pvc];
-        [self.pvc.videoContainerView suspendHandler];
+        [self addChildViewController:self.vodPlayVC];
+        [self.vodPlayVC suspendHandler];
         self.willAppearFromPlayerView = NO;
         self.hasSuspendView = YES;
     }
@@ -162,20 +166,29 @@
         [_suspendView.closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSuspendHandler)];
         [_suspendView addGestureRecognizer:tap];
+        _suspendView.backgroundColor = [UIColor brownColor];
     }
     return _suspendView;
 }
 
 - (void)tapSuspendHandler {
-    self.willAppearFromPlayerView = YES;
-    self.hasSuspendView = NO;
-    [self.pvc.videoContainerView removeFromSuperview];
-    [self.pvc removeFromParentViewController];
+//    self.willAppearFromPlayerView = YES;
+//    self.hasSuspendView = NO;
+//    [self.pvc.videoContainerView removeFromSuperview];
+//    [self.pvc removeFromParentViewController];
+//    [self.suspendView removeFromSuperview];
+//    [self.clearView removeFromSuperview];
+//    [self.pvc pushFromSuspendHandler];
+//    [self.pvc.videoContainerView recoveryHandler];
+//    [self.navigationController pushViewController:self.pvc animated:YES];
+    
+    [self.vodPlayVC.view removeFromSuperview];
+    [self.vodPlayVC removeFromParentViewController];
     [self.suspendView removeFromSuperview];
     [self.clearView removeFromSuperview];
-    [self.pvc pushFromSuspendHandler];
-    [self.pvc.videoContainerView recoveryHandler];
-    [self.navigationController pushViewController:self.pvc animated:YES];
+//    [self.vodPlayVC pushFromSuspendHandler];
+    [self.vodPlayVC recoveryHandler];
+    [self.navigationController pushViewController:self.vodPlayVC animated:YES];
 }
 
 - (UIView *)clearView {
@@ -187,12 +200,12 @@
 }
 
 - (void)closeButtonAction {
-    [self.pvc.videoContainerView removeFromSuperview];
-    [self.pvc removeFromParentViewController];
+    [self.vodPlayVC.view removeFromSuperview];
+    [self.vodPlayVC removeFromParentViewController];
     [self.suspendView removeFromSuperview];
     [self.clearView removeFromSuperview];
-    [self.pvc stopSuspend];
-    self.pvc = nil;
+    [self.vodPlayVC stopSuspend];
+    self.vodPlayVC = nil;
     self.hasSuspendView = NO;
 }
 
@@ -208,7 +221,15 @@
         LivePlayController *lpc = (LivePlayController *)desVC;
         lpc.playerViewModel = playerViewModel;
     } else if (self.showType == VideoListShowTypeVod) {
-        desVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel];
+        VodListPlayController *vodVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel suspendView:_suspendView];
+        desVC = vodVC;
+        self.vodPlayVC = vodVC.playVC;
+        
+        __weak typeof(self) weakSelf = self;
+        vodVC.willDisappearBlocked = ^{
+            typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf.willAppearFromPlayerView = YES;
+        };
     }
     if (desVC) {
         [self.navigationController pushViewController:desVC animated:YES];

@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.rotateIndex = 0;
+    self.rotateIndex = 1;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarOrientationChange:)name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     [self setupUI];
     [self setupOperationBlock];
@@ -116,6 +116,8 @@
             strongSelf.rotateIndex += 1;
         } else {
             strongSelf.rotateIndex = 0;
+            strongSelf.player.rotateDegress = [rotates[strongSelf.rotateIndex] intValue];
+            strongSelf.rotateIndex += 1;
         }
     };
     

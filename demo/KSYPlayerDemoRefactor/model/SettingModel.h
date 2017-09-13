@@ -25,6 +25,8 @@
 
 @property (nonatomic, assign) BOOL  recording;
 
+@property (nonatomic, assign) BOOL  showDebugLog;
+
 + (instancetype)defaultSetting;
 
 @end

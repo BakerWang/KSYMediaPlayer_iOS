@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *prepareTimeoutTextField;
 @property (weak, nonatomic) IBOutlet UITextField *readTimeoutTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *loopPlaySwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *showDebugLogSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *confirmConfigeButton;
 @property (weak, nonatomic) IBOutlet UIButton *hardDecodeButton;
 @property (weak, nonatomic) IBOutlet UIButton *softDecodeButton;
@@ -28,7 +29,6 @@
     
     UIView *aView = [[UIView alloc] init];
     self.tableView.tableFooterView = aView;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self defaultSettingHandler];
 }
 
@@ -41,6 +41,7 @@
     self.prepareTimeoutTextField.text = [NSString stringWithFormat:@"%zd", model.preparetimeOut];
     self.readTimeoutTextField.text = [NSString stringWithFormat:@"%zd", model.readtimeOut];
     self.loopPlaySwitch.on = model.shouldLoop;
+    self.showDebugLogSwitch.on = model.showDebugLog;
     self.hardDecodeButton.selected = (model.videoDecoderMode == MPMovieVideoDecoderMode_Hardware);
     self.softDecodeButton.selected = (model.videoDecoderMode == MPMovieVideoDecoderMode_Software);
 }
@@ -60,6 +61,7 @@
     model.preparetimeOut = [[self.prepareTimeoutTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] integerValue];
     model.readtimeOut = [[self.readTimeoutTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] integerValue];
     model.shouldLoop = self.loopPlaySwitch.on;
+    model.showDebugLog = self.showDebugLogSwitch.on;
     
     [self hideKeyboard];
     [self.navigationController popViewControllerAnimated:YES];

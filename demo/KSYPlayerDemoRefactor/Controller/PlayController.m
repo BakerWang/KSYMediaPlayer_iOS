@@ -53,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self registerHandGesture];
     [self addObservers];
     [self setupPlayer];
     [self setupDebugeUI];
@@ -71,6 +72,13 @@
 }
 
 - (void)setupDebugeUI {
+    
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    SettingModel *model = delegate.settingModel;
+    if (!model.showDebugLog) {
+        return;
+    }
+    
     self.labelStat = [self addLabelWithText:nil textColor:[UIColor redColor]];
     [self.view addSubview:_labelStat];
     
@@ -430,6 +438,33 @@
 
 - (NSTimeInterval) getCurrentTime{
     return [[NSDate date] timeIntervalSince1970];
+}
+
+#pragma mark on hand gesture
+- (void)registerHandGesture{
+    UISwipeGestureRecognizer *leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+    leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    UISwipeGestureRecognizer *rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];
+    rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    [self.view addGestureRecognizer:leftSwipeRecognizer];
+    [self.view addGestureRecognizer:rightSwipeRecognizer];
+}
+
+//左右滑动
+- (void)handleSwipeGesture:(UISwipeGestureRecognizer *)swpie {
+    if (swpie.direction == UISwipeGestureRecognizerDirectionRight) {
+        [_labelStat mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+    if (swpie.direction == UISwipeGestureRecognizerDirectionLeft) {
+        [_labelStat mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(self.view);
+            make.trailing.equalTo(self.view.mas_leading);
+            make.width.equalTo(self.view);
+        }];
+    }
 }
 
 @end

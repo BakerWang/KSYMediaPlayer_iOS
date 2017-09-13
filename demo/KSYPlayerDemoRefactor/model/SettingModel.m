@@ -19,6 +19,7 @@
     settingModel.readtimeOut = 30;
     settingModel.shouldLoop = YES;
     settingModel.recording = NO;
+    settingModel.showDebugLog = NO;
     return settingModel;
 }
 

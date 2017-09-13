@@ -400,8 +400,35 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12978678941726685" green="0.20923766493797302" blue="0.32961079478263855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="54" id="oPT-HV-FMm">
+                                        <rect key="frame" x="0.0" y="288" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oPT-HV-FMm" id="eXV-Rg-JTx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="调试信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDO-ch-ru2">
+                                                    <rect key="frame" x="28" y="16" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.49392068389999999" green="0.49330264330000001" blue="0.53887134790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mwG-Rz-gMt">
+                                                    <rect key="frame" x="296" y="11.5" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.086207754910000003" green="0.085967786609999999" blue="0.1025428399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="GDO-ch-ru2" firstAttribute="centerY" secondItem="eXV-Rg-JTx" secondAttribute="centerY" id="XRm-mh-Phv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mwG-Rz-gMt" secondAttribute="trailing" constant="22" id="ccu-4O-oMV"/>
+                                                <constraint firstItem="GDO-ch-ru2" firstAttribute="leading" secondItem="eXV-Rg-JTx" secondAttribute="leadingMargin" constant="20" id="pBl-U4-3Xu"/>
+                                                <constraint firstItem="mwG-Rz-gMt" firstAttribute="centerY" secondItem="eXV-Rg-JTx" secondAttribute="centerY" id="x8b-DH-Nbb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.12978678939999999" green="0.20923766490000001" blue="0.3296107948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="EPd-Tb-plv">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="74"/>
+                                        <rect key="frame" x="0.0" y="342" width="375" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EPd-Tb-plv" id="exK-aV-nh3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
@@ -469,6 +496,7 @@
                         <outlet property="loopPlaySwitch" destination="esw-y8-3QY" id="IFk-kj-28K"/>
                         <outlet property="prepareTimeoutTextField" destination="yWx-so-BdI" id="3uB-JL-NBB"/>
                         <outlet property="readTimeoutTextField" destination="l5r-tg-HA7" id="s1E-sQ-y9z"/>
+                        <outlet property="showDebugLogSwitch" destination="mwG-Rz-gMt" id="gMp-RB-EU7"/>
                         <outlet property="softDecodeButton" destination="zha-nE-gxu" id="V3d-5I-SqK"/>
                     </connections>
                 </tableViewController>

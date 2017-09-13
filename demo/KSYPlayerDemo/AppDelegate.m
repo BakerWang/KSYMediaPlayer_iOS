@@ -19,18 +19,18 @@
 #define DEV_MODE 0
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    BuglyConfig *cfg = [[BuglyConfig alloc] init];
-//    cfg.channel = @"public";
-//    [Bugly startWithAppId:@"551ed64275" config:cfg];
-//    NSLog(@"Bugly Version:%@",[Bugly sdkVersion]);
-//    
-//    if(!DEV_MODE){
-//        self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//        KSYLiveVC *liveVc = [[KSYLiveVC alloc]init];
-//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:liveVc];
-//        self.window.rootViewController = nav;
-//        [self.window makeKeyAndVisible];
-//    }
+    BuglyConfig *cfg = [[BuglyConfig alloc] init];
+    cfg.channel = @"public";
+    [Bugly startWithAppId:@"551ed64275" config:cfg];
+    NSLog(@"Bugly Version:%@",[Bugly sdkVersion]);
+    
+    if(!DEV_MODE){
+        self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        KSYLiveVC *liveVc = [[KSYLiveVC alloc]init];
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:liveVc];
+        self.window.rootViewController = nav;
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 

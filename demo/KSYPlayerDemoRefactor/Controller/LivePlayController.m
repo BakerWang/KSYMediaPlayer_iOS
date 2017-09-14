@@ -42,7 +42,9 @@
     
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     BOOL fullScreen = (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft);
-    [self.playerViewModel fullScreenHandlerForLivePlayController:self isFullScreen:(!fullScreen ?: !fullScreen)];
+    if (fullScreen) {
+        [self.playerViewModel fullScreenHandlerForLivePlayController:self isFullScreen:!fullScreen];
+    }
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.allowRotation = NO;
@@ -114,7 +116,7 @@
     // 镜像block
     self.playOperationView.mirrorBlock = ^{
         typeof(weakSelf) strongSelf = weakSelf;
-        strongSelf.player.mirror = YES;
+        strongSelf.player.mirror = !strongSelf.player.mirror;
     };
     // 画面旋转block
     self.playOperationView.pictureRotateBlock = ^{

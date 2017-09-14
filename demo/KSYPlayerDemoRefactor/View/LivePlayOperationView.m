@@ -9,6 +9,7 @@
 #import "LivePlayOperationView.h"
 #import "UpdateVolumeAndBrightView.h"
 #import "LiveVolumeView.h"
+#import "NemoFavourView.h"
 #import "VideoModel.h"
 
 @interface LivePlayOperationView ()
@@ -24,6 +25,7 @@
 
 @property (nonatomic, strong) UILabel            *videoTitleLab;
 @property (nonatomic, strong) LiveVolumeView     *volumeView;
+@property (nonatomic, strong) NemoFavourView     *favView;
 @property (nonatomic, strong) VideoModel         *videoModel;
 @end
 
@@ -63,12 +65,32 @@
     [self addSubview:self.screenRecordButton];
     [self addSubview:self.mirrorImageButton];
     [self addSubview:self.pictureRotateButton];
+    [self addSubview:self.favView];
     [self addSubview:self.volumeButton];
     [self addSubview:self.volumeView];
     [self addSubview:self.praiseButton];
     [self configeConstraints];
     
     self.volumeView.hidden = YES;
+}
+
+- (NemoFavourView *)favView {
+    if (!_favView) {
+        _favView = [[NemoFavourView alloc] initWithFrame:CGRectZero];
+        _favView.imageArray = [self getFavourIcons];
+    }
+    return _favView;
+}
+
+- (NSArray <__kindof UIImage *>*)getFavourIcons{
+    NSMutableArray *tmp_array = [NSMutableArray array];
+    for (NSInteger i = 0; i < 4; ++i){
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"fav_img_heart%ld",(long)i]];
+        if (image) {
+            [tmp_array addObject:image];
+        }
+    }
+    return tmp_array;
 }
 
 - (void)aTapEv {
@@ -217,6 +239,7 @@
 }
 
 - (void)praiseHandler {
+    [self.favView animationStart];
     if (self.praiseBlock) {
         self.praiseBlock();
     }
@@ -259,7 +282,12 @@
         make.top.equalTo(self.mirrorImageButton.mas_bottom).offset(30);
         make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
-    
+    [self.favView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self).offset(-10);
+        make.bottom.equalTo(self);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo([UIScreen mainScreen].bounds.size.height * 0.5);
+    }];
     [self.praiseButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.bottom.mas_equalTo(-6);
         make.size.mas_equalTo(CGSizeMake(50, 50));

@@ -40,6 +40,7 @@
 @property (nonatomic, strong) UIView                    *clearView;
 @property (nonatomic, assign) BOOL willAppearFromPlayerView;
 @property (nonatomic, assign) BOOL isMoving;
+@property (weak, nonatomic) IBOutlet UIButton *qrcodeButton;
 @end
 
 @implementation VideoListShowController
@@ -97,6 +98,9 @@
     }
 }
 - (IBAction)scanQRCodeAction:(id)sender {
+    if (self.hasSuspendView) {
+        return;
+    }
     QRViewController *qrVC = [[QRViewController alloc] init];
     __weak typeof(qrVC) weakQRVC = qrVC;
     __weak typeof(self) weakSelf = self;

@@ -39,6 +39,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    BOOL fullScreen = (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft);
+    [self.playerViewModel fullScreenHandlerForLivePlayController:self isFullScreen:(!fullScreen ?: !fullScreen)];
+    
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     delegate.allowRotation = NO;
     if (self.willDisappearBlocked) {
@@ -82,10 +87,6 @@
         typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.view sendSubviewToBack:strongSelf.playOperationView];
         [strongSelf.view sendSubviewToBack:strongSelf.player.view];
-        UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
-        if (orientation == UIDeviceOrientationPortrait) {
-//            [strongSelf.playerViewModel fullScreenHandlerForPlayController:strongSelf isFullScreen:NO];
-        }
     }];
     
     self.playOperationView.playStateBlock = ^(VCPlayHandlerState state) {

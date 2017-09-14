@@ -45,7 +45,7 @@
         __weak typeof(self) weakSelf = self;
         _playOperationView = [[VodPlayOperationView alloc] initWithFullScreenBlock:^(BOOL isFullScreen) {
             typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf.playerViewModel fullScreenHandlerForPlayController:strongSelf isFullScreen:isFullScreen];
+            [strongSelf.playerViewModel fullScreenButtonClickedHandlerForVodPlayController:strongSelf isFullScreen:isFullScreen];
         }];
     }
     return _playOperationView;

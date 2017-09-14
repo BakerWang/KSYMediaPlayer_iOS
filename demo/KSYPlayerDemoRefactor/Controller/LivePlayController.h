@@ -24,4 +24,6 @@
 
 - (void)stopSuspend;
 
+- (void)pushFromSuspendHandler;
+
 @end

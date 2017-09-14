@@ -192,4 +192,11 @@
     [self.player stop];
 }
 
+- (void)pushFromSuspendHandler {
+    [self.view insertSubview:self.player.view atIndex:0];
+    [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+
 @end

@@ -84,21 +84,21 @@
             [self addChildViewController:self.vodPlayVC];
             [self.vodPlayVC suspendHandler];
         } else if (self.showType == VideoListShowTypeLive) {
-            [self.suspendView addSubview:self.livePlayVC.view];
-            [self.suspendView sendSubviewToBack:self.livePlayVC.view];
-            [self.livePlayVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(self.suspendView);
-            }];
-            [self addChildViewController:self.livePlayVC];
-            [self.livePlayVC suspendHandler];
-            
-//            [self.suspendView addSubview:self.livePlayVC.player.view];
-//            [self.suspendView sendSubviewToBack:self.livePlayVC.player.view];
-//            [self.livePlayVC.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            [self.suspendView addSubview:self.livePlayVC.view];
+//            [self.suspendView sendSubviewToBack:self.livePlayVC.view];
+//            [self.livePlayVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
 //                make.edges.equalTo(self.suspendView);
 //            }];
 //            [self addChildViewController:self.livePlayVC];
 //            [self.livePlayVC suspendHandler];
+            
+            [self.suspendView addSubview:self.livePlayVC.player.view];
+            [self.suspendView sendSubviewToBack:self.livePlayVC.player.view];
+            [self.livePlayVC.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(self.suspendView);
+            }];
+            [self addChildViewController:self.livePlayVC];
+            [self.livePlayVC suspendHandler];
         }
         self.willAppearFromPlayerView = NO;
         self.hasSuspendView = YES;
@@ -204,11 +204,12 @@
         [self.vodPlayVC recoveryHandler];
         [self.navigationController pushViewController:self.vodPlayListVC animated:YES];
     } else if (self.showType == VideoListShowTypeLive) {
-        [self.livePlayVC.view removeFromSuperview];
+        [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
         [self.clearView removeFromSuperview];
         [self.livePlayVC recoveryHandler];
+        [self.livePlayVC pushFromSuspendHandler];
         [self.navigationController pushViewController:self.livePlayVC animated:YES];
     }
 }
@@ -231,7 +232,7 @@
         self.vodPlayListVC = nil;
         self.vodPlayVC = nil;
     } else if (self.showType == VideoListShowTypeLive) {
-        [self.livePlayVC.view removeFromSuperview];
+        [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
         [self.clearView removeFromSuperview];

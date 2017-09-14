@@ -42,6 +42,7 @@
 		95B4A4131CC085BE00CB6804 /* KSYSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B4A40D1CC085BE00CB6804 /* KSYSQLite.m */; };
 		95B4A4141CC085BE00CB6804 /* KSYSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B4A40F1CC085BE00CB6804 /* KSYSQLiteManager.m */; };
 		95B4A4151CC085BE00CB6804 /* QRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B4A4111CC085BE00CB6804 /* QRViewController.m */; };
+		D127D53BD265C2BB9DCA54B1 /* libPods-KSYPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F018402EE49AD0F2E84E2C /* libPods-KSYPlayerDemo.a */; };
 		E328B4D81CCE087400BD31FC /* KSYDBCreater.m in Sources */ = {isa = PBXBuildFile; fileRef = E328B4D71CCE087400BD31FC /* KSYDBCreater.m */; };
 		F00FDA081F5552A10001B516 /* DefinitionMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F00FDA071F5552A10001B516 /* DefinitionMenuView.m */; };
 		F00FDA0A1F5552C30001B516 /* DefinitionMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F00FDA091F5552C30001B516 /* DefinitionMenuView.xib */; };
@@ -142,6 +143,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C5C00FB616152FF1A34E22A /* Pods-KSYPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		23F018402EE49AD0F2E84E2C /* libPods-KSYPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSYPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		314D1B4F1EF8FAC80033C993 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		581D3A7E1DE68CDA00051F63 /* KSYMediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KSYMediaPlayer.framework; path = ../framework/live/KSYMediaPlayer.framework; sourceTree = "<group>"; };
 		582096011EDED32600C38D0F /* KSYAVWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYAVWriter.h; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		95B4A40F1CC085BE00CB6804 /* KSYSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYSQLiteManager.m; sourceTree = "<group>"; };
 		95B4A4101CC085BE00CB6804 /* QRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRViewController.h; sourceTree = "<group>"; };
 		95B4A4111CC085BE00CB6804 /* QRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRViewController.m; sourceTree = "<group>"; };
+		C12DB69B201B19243E543324 /* Pods-KSYPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSYPlayerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E328B4D61CCE087400BD31FC /* KSYDBCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSYDBCreater.h; sourceTree = "<group>"; };
 		E328B4D71CCE087400BD31FC /* KSYDBCreater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSYDBCreater.m; sourceTree = "<group>"; };
 		F00FDA061F5552A10001B516 /* DefinitionMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefinitionMenuView.h; sourceTree = "<group>"; };
@@ -384,17 +388,28 @@
 				74B9EE2F1C159643003149E9 /* libstdc++.6.tbd in Frameworks */,
 				74B9EE2B1C159630003149E9 /* libbz2.tbd in Frameworks */,
 				74B9EE291C159629003149E9 /* libz.tbd in Frameworks */,
+				D127D53BD265C2BB9DCA54B1 /* libPods-KSYPlayerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45F015199874D22CF84D7E64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C5C00FB616152FF1A34E22A /* Pods-KSYPlayerDemo.debug.xcconfig */,
+				C12DB69B201B19243E543324 /* Pods-KSYPlayerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		581D3A7D1DE68CDA00051F63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				314D1B4F1EF8FAC80033C993 /* Bugly.framework */,
 				581D3A7E1DE68CDA00051F63 /* KSYMediaPlayer.framework */,
+				23F018402EE49AD0F2E84E2C /* libPods-KSYPlayerDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -466,6 +481,7 @@
 				74B9ED5A1C158675003149E9 /* KSYPlayerDemo */,
 				74B9ED591C158675003149E9 /* Products */,
 				581D3A7D1DE68CDA00051F63 /* Frameworks */,
+				45F015199874D22CF84D7E64 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -814,10 +830,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74B9ED6F1C158675003149E9 /* Build configuration list for PBXNativeTarget "KSYPlayerDemo" */;
 			buildPhases = (
+				AF2BF71D98CD27B21D93C0C7 /* [CP] Check Pods Manifest.lock */,
 				74B9ED541C158675003149E9 /* Sources */,
 				74B9ED551C158675003149E9 /* Frameworks */,
 				74B9ED561C158675003149E9 /* Resources */,
 				7461698C1D214AE5005941DF /* Embed Frameworks */,
+				5AC19FE9FA9D2C140AA3BB60 /* [CP] Embed Pods Frameworks */,
+				4627CA71A43286FBED299D69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -885,6 +904,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4627CA71A43286FBED299D69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AC19FE9FA9D2C140AA3BB60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KSYPlayerDemo/Pods-KSYPlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF2BF71D98CD27B21D93C0C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74B9ED541C158675003149E9 /* Sources */ = {
@@ -1089,6 +1156,7 @@
 		};
 		74B9ED701C158675003149E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C5C00FB616152FF1A34E22A /* Pods-KSYPlayerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1112,6 +1180,7 @@
 		};
 		74B9ED711C158675003149E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12DB69B201B19243E543324 /* Pods-KSYPlayerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

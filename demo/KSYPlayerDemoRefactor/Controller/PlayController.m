@@ -50,6 +50,10 @@
     return _videoModel;
 }
 
+- (void)configeVideoModel:(VideoModel *)videoModel {
+    _videoModel = videoModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

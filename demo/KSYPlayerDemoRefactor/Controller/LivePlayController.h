@@ -24,6 +24,14 @@
 
 - (void)stopSuspend;
 
+/**
+ *  点击悬浮窗，重新push
+ */
 - (void)pushFromSuspendHandler;
+
+/**
+ *  点击视频列表内的其他item，player需要reload
+ */
+- (void)reloadPushFromSuspendHandler;
 
 @end

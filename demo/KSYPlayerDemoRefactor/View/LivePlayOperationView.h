@@ -23,6 +23,8 @@
 
 - (instancetype)initWithVideoModel:(VideoModel *)videoModel;
 
+- (void)configeWithVideoModel:(VideoModel *)videoModel;
+
 - (void)recoveryHandler;
 
 - (void)suspendHandler;

@@ -12,6 +12,7 @@
 #import "KSYUIVC.h"
 #import "AppDelegate.h"
 #import "PlayerViewModel.h"
+#import "VideoModel.h"
 
 @interface LivePlayController ()
 @property (nonatomic, strong) RecordeViewController     *recordeController;
@@ -131,6 +132,11 @@
     // 点赞block
 }
 
+- (void)setPlayerViewModel:(PlayerViewModel *)playerViewModel {
+    _playerViewModel = playerViewModel;
+    [self configeVideoModel:_playerViewModel.playingVideoModel];
+}
+
 #pragma mark --
 #pragma mark - notification handler
 
@@ -197,6 +203,23 @@
     [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+- (void)reloadPushFromSuspendHandler {
+    [self.view insertSubview:self.player.view atIndex:0];
+    [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+
+    NSInteger definitationIndex = self.currentVideoModel.definitation.integerValue;
+    NSString *urlStr = nil;
+    if (definitationIndex >= self.currentVideoModel.PlayURL.count) {
+        return;
+    }
+    
+    urlStr = self.currentVideoModel.PlayURL[definitationIndex];
+    [self.player reload:[NSURL URLWithString:urlStr]];
+    [self.playOperationView configeWithVideoModel:self.currentVideoModel];
 }
 
 @end

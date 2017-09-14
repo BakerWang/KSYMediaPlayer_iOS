@@ -336,4 +336,9 @@
     self.userInteractionEnabled = NO;
 }
 
+- (void)configeWithVideoModel:(VideoModel *)videoModel {
+    _videoModel = videoModel;
+    self.videoTitleLab.text = videoModel.VideoTitle;
+}
+
 @end

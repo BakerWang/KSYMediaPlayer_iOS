@@ -12,6 +12,7 @@
 #import "VideoModel.h"
 #import "PlayerTableViewCell.h"
 #import "AppDelegate.h"
+#import "VodPlayOperationView.h"
 
 @interface VodListPlayController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) PlayerViewModel          *playerViewModel;
@@ -142,6 +143,26 @@
         make.leading.trailing.top.equalTo(self.view);
         make.height.mas_equalTo(211);
     }];
+}
+
+- (void)reloadPushFromSuspendHandler {
+    [self.view addSubview:self.playVC.view];
+    [self addChildViewController:self.playVC];
+    
+    [self.playVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.equalTo(self.view);
+        make.height.mas_equalTo(211);
+    }];
+    
+    NSInteger definitationIndex = self.playVC.currentVideoModel.definitation.integerValue;
+    NSString *urlStr = nil;
+    if (definitationIndex >= self.playVC.currentVideoModel.PlayURL.count) {
+        return;
+    }
+    
+    urlStr = self.playVC.currentVideoModel.PlayURL[definitationIndex];
+    [self.playVC reload:[NSURL URLWithString:urlStr]];
+    [self.playVC.playOperationView configeVideoModel:self.playVC.currentVideoModel];
 }
 
 - (void)recoveryHandler {

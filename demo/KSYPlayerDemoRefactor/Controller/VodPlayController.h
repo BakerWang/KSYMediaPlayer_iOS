@@ -8,13 +8,15 @@
 
 #import "PlayController.h"
 
-@class PlayerViewModel;
+@class PlayerViewModel, VodPlayOperationView;
 
 @interface VodPlayController : PlayController
 
 @property (nonatomic, strong) PlayerViewModel      *playerViewModel;
 
 @property (nonatomic, assign) BOOL fullScreen;
+
+@property (nonatomic, strong) VodPlayOperationView      *playOperationView;
 
 - (void)suspendHandler;
 

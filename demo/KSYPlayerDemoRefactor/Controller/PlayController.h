@@ -25,6 +25,8 @@
 
 - (VideoModel *)currentVideoModel;
 
+- (void)configeVideoModel:(VideoModel *)videoModel;
+
 - (void)notifyHandler:(NSNotification*)notify;
 
 @end

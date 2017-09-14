@@ -66,11 +66,11 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
     if (_willAppearFromPlayerView) {
-        [self.view addSubview:self.clearView];
+//        [self.view addSubview:self.clearView];
         [self.view addSubview:self.suspendView];
-        [self.clearView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view);
-        }];
+//        [self.clearView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.equalTo(self.view);
+//        }];
         self.suspendView.frame = CGRectMake(0, 0, 200, 113);
         self.suspendView.center = self.view.center;
         
@@ -84,14 +84,6 @@
             [self addChildViewController:self.vodPlayVC];
             [self.vodPlayVC suspendHandler];
         } else if (self.showType == VideoListShowTypeLive) {
-//            [self.suspendView addSubview:self.livePlayVC.view];
-//            [self.suspendView sendSubviewToBack:self.livePlayVC.view];
-//            [self.livePlayVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.edges.equalTo(self.suspendView);
-//            }];
-//            [self addChildViewController:self.livePlayVC];
-//            [self.livePlayVC suspendHandler];
-            
             [self.suspendView addSubview:self.livePlayVC.player.view];
             [self.suspendView sendSubviewToBack:self.livePlayVC.player.view];
             [self.livePlayVC.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -199,7 +191,7 @@
         [self.vodPlayVC.view removeFromSuperview];
         [self.vodPlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-        [self.clearView removeFromSuperview];
+//        [self.clearView removeFromSuperview];
         [self.vodPlayListVC pushFromSuspendHandler];
         [self.vodPlayVC recoveryHandler];
         [self.navigationController pushViewController:self.vodPlayListVC animated:YES];
@@ -207,7 +199,7 @@
         [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-        [self.clearView removeFromSuperview];
+//        [self.clearView removeFromSuperview];
         [self.livePlayVC recoveryHandler];
         [self.livePlayVC pushFromSuspendHandler];
         [self.navigationController pushViewController:self.livePlayVC animated:YES];
@@ -227,7 +219,7 @@
         [self.vodPlayVC.view removeFromSuperview];
         [self.vodPlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-        [self.clearView removeFromSuperview];
+//        [self.clearView removeFromSuperview];
         [self.vodPlayVC stopSuspend];
         self.vodPlayListVC = nil;
         self.vodPlayVC = nil;
@@ -235,7 +227,7 @@
         [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-        [self.clearView removeFromSuperview];
+//        [self.clearView removeFromSuperview];
         [self.livePlayVC stopSuspend];
         self.livePlayVC = nil;
     }
@@ -249,28 +241,67 @@
     PlayerViewModel *playerViewModel = [[PlayerViewModel alloc] initWithPlayingVideoModel:videoModel videoListViewModel:_videoListViewModel selectedIndex:selectedIndex];
     
     UIViewController *desVC = nil;
+    NSString *selectPlayUrl = videoModel.PlayURL[videoModel.definitation.integerValue];
+    
     if (self.showType == VideoListShowTypeLive) {
-        desVC = [[LivePlayController alloc] initWithVideoModel:videoModel];
-        LivePlayController *lpc = (LivePlayController *)desVC;
-        lpc.playerViewModel = playerViewModel;
-        self.livePlayVC = lpc;
         
-        __weak typeof(self) weakSelf = self;
-        lpc.willDisappearBlocked = ^{
-            typeof(weakSelf) strongSelf = weakSelf;
-            strongSelf.willAppearFromPlayerView = YES;
-        };
+        if (self.livePlayVC) {
+            NSString *currPlayUrl = self.livePlayVC.currentVideoModel.PlayURL[_livePlayVC.currentVideoModel.definitation.integerValue];
+            self.livePlayVC.playerViewModel = playerViewModel;
+            [self.livePlayVC configeVideoModel:videoModel];
+            [self.livePlayVC.player.view removeFromSuperview];
+            [self.livePlayVC removeFromParentViewController];
+            [self.suspendView removeFromSuperview];
+//            [self.clearView removeFromSuperview];
+            [self.livePlayVC recoveryHandler];
+            if ([currPlayUrl isEqualToString:selectPlayUrl]) {
+                [self.livePlayVC pushFromSuspendHandler];
+            } else {
+                [self.livePlayVC reloadPushFromSuspendHandler];
+            }
+            desVC = self.livePlayVC;
+        } else {
+            LivePlayController *lpc = [[LivePlayController alloc] initWithVideoModel:videoModel];
+            lpc.playerViewModel = playerViewModel;
+            desVC = lpc;
+            self.livePlayVC = lpc;
+            
+            __weak typeof(self) weakSelf = self;
+            lpc.willDisappearBlocked = ^{
+                typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf.willAppearFromPlayerView = YES;
+            };
+        }
+
+        
     } else if (self.showType == VideoListShowTypeVod) {
-        VodListPlayController *vodVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel suspendView:_suspendView];
-        desVC = vodVC;
-        self.vodPlayVC = vodVC.playVC;
-        self.vodPlayListVC = vodVC;
         
-        __weak typeof(self) weakSelf = self;
-        vodVC.willDisappearBlocked = ^{
-            typeof(weakSelf) strongSelf = weakSelf;
-            strongSelf.willAppearFromPlayerView = YES;
-        };
+        if (self.vodPlayListVC) {
+            NSString *currPlayUrl = self.vodPlayVC.currentVideoModel.PlayURL[_livePlayVC.currentVideoModel.definitation.integerValue];
+            self.vodPlayVC.playerViewModel = playerViewModel;
+            [self.vodPlayVC configeVideoModel:videoModel];
+            [self.vodPlayVC.view removeFromSuperview];
+            [self.vodPlayVC removeFromParentViewController];
+            [self.suspendView removeFromSuperview];
+            [self.vodPlayVC recoveryHandler];
+            if ([currPlayUrl isEqualToString:selectPlayUrl]) {
+                [self.vodPlayListVC pushFromSuspendHandler];
+            } else {
+                [self.vodPlayListVC reloadPushFromSuspendHandler];
+            }
+            desVC = self.vodPlayListVC;
+        } else {
+            VodListPlayController *vodVC = [[VodListPlayController alloc] initWithPlayerViewModel:playerViewModel suspendView:_suspendView];
+            desVC = vodVC;
+            self.vodPlayVC = vodVC.playVC;
+            self.vodPlayListVC = vodVC;
+            
+            __weak typeof(self) weakSelf = self;
+            vodVC.willDisappearBlocked = ^{
+                typeof(weakSelf) strongSelf = weakSelf;
+                strongSelf.willAppearFromPlayerView = YES;
+            };
+        }
     }
     if (desVC) {
         [self.navigationController pushViewController:desVC animated:YES];
@@ -349,13 +380,6 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     self.isMoving = NO;
-}
-
-#pragma mark -----
-#pragma mark - public method
-
-- (void)suspendHandler {
-    
 }
 
 @end

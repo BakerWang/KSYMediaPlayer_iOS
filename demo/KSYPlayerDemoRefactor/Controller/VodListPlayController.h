@@ -21,6 +21,8 @@
 
 - (void)pushFromSuspendHandler;
 
+- (void)reloadPushFromSuspendHandler;
+
 - (void)recoveryHandler;
 
 @end

@@ -16,7 +16,7 @@
 @interface VodPlayController ()
 @property (nonatomic, assign) BOOL                       switchingDefination;
 @property (nonatomic, assign) NSTimeInterval             playedTime;
-@property (nonatomic, strong) VodPlayOperationView      *playOperationView;
+//@property (nonatomic, strong) VodPlayOperationView      *playOperationView;
 @property (nonatomic, strong) RecordeViewController     *recordeController;
 @end
 

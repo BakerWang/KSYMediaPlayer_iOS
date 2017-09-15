@@ -101,11 +101,30 @@
         typeof(weakSelf) strongSelf = weakSelf;
         [strongQRVC dismissViewControllerAnimated:YES completion:nil];
         VideoModel *model = [[VideoModel alloc] init];
-#warning 检测stringQR是否是合法的点播地址
-        model.PlayURL = @[stringQR];
-        [strongSelf didSelectedVideoHandler:model selectedIndex:-1];
+
+        if ([strongSelf legalUrl:stringQR]) {
+            model.PlayURL = @[stringQR];
+            [strongSelf didSelectedVideoHandler:model selectedIndex:-1];
+        } else {
+            [strongSelf dismissViewControllerAnimated:YES completion:^{
+                [strongSelf.view makeToast:[stringQR stringByAppendingString:@"is an illlegal url"] duration:1 position:CSToastPositionCenter];
+            }];
+        }
     };
     [self presentViewController:qrVC animated:YES completion:nil];
+}
+
+// 检测stringQR是否是合法的点播地址，根据视频地址的命名规则自行修改
+- (BOOL)legalUrl:(NSString *)rul {
+    __block BOOL legal = NO;
+    NSArray<NSString*> *legals = @[@".flv", @".m3u8", @".mov", @".mp4", @".avi", @".rmvb", @".mkv"];
+    [legals enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([rul containsString:obj]) {
+            legal = YES;
+            *stop = YES;
+        }
+    }];
+    return legal;
 }
 
 - (void)fetchDatasource {
@@ -216,7 +235,6 @@
         [self.vodPlayVC.view removeFromSuperview];
         [self.vodPlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-//        [self.clearView removeFromSuperview];
         [self.vodPlayVC stopSuspend];
         self.vodPlayListVC = nil;
         self.vodPlayVC = nil;

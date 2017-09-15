@@ -1,53 +1,92 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleAspectFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 kingsoft. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-FW-vFz">
-                                <rect key="frame" x="80" y="504" width="441" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="KSYPlayerDemo" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="bMA-m4-lOF">
-                                <rect key="frame" x="80" y="126" width="441" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-pz-gT4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金山视频云播放SDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z40-Jh-cLc">
+                                <rect key="frame" x="63" y="118" width="288" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提供更专业可靠的直点播服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-uQ-0zk">
+                                <rect key="frame" x="127" y="172" width="160" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itW-mK-jr1">
+                                <rect key="frame" x="176" y="627" width="62" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京金山云网络技术有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv4-mB-WLf">
+                                <rect key="frame" x="127" y="693" width="160" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-H7-7lM">
+                                <rect key="frame" x="127" y="577" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.93937265869999997" green="0.26733985539999999" blue="0.25271934270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uNE-Dt-EyQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="开启播放"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bMA-m4-lOF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="60" id="FyM-U6-iF1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="g2e-FW-vFz" secondAttribute="trailing" constant="60" id="K5S-4Y-qrx"/>
-                            <constraint firstItem="g2e-FW-vFz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="60" id="RE5-pY-TI8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bMA-m4-lOF" secondAttribute="trailing" constant="59" id="bbg-gP-jBi"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g2e-FW-vFz" secondAttribute="bottom" constant="40" id="h4q-jW-QkU"/>
-                            <constraint firstItem="bMA-m4-lOF" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="mxT-E5-wJL"/>
+                            <constraint firstItem="gaS-pz-gT4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="0NH-O3-pfA"/>
+                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Ik-Q6-XgS"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Uv4-mB-WLf" secondAttribute="bottom" constant="28" id="5WJ-yy-Ion"/>
+                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="top" secondItem="itW-mK-jr1" secondAttribute="bottom" constant="51" id="BCX-H7-kt1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gaS-pz-gT4" secondAttribute="trailing" constant="-20" id="Hg2-xA-Lu0"/>
+                            <constraint firstItem="itW-mK-jr1" firstAttribute="top" secondItem="TGy-H7-7lM" secondAttribute="bottom" constant="10" id="LSj-RH-cgf"/>
+                            <constraint firstItem="Z40-Jh-cLc" firstAttribute="centerX" secondItem="gaS-pz-gT4" secondAttribute="centerX" id="UcJ-qM-KgB"/>
+                            <constraint firstItem="TGy-H7-7lM" firstAttribute="leading" secondItem="Uv4-mB-WLf" secondAttribute="leading" id="X62-3h-9ji"/>
+                            <constraint firstItem="dlP-uQ-0zk" firstAttribute="centerX" secondItem="Z40-Jh-cLc" secondAttribute="centerX" id="XL0-2V-j8R"/>
+                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="centerX" secondItem="itW-mK-jr1" secondAttribute="centerX" id="Y0o-zP-Hsw"/>
+                            <constraint firstItem="TGy-H7-7lM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qXG-1U-CUH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gaS-pz-gT4" secondAttribute="bottom" id="rDG-Xg-HZC"/>
+                            <constraint firstItem="dlP-uQ-0zk" firstAttribute="top" secondItem="Z40-Jh-cLc" secondAttribute="bottom" constant="15" id="snG-pG-FSa"/>
+                            <constraint firstItem="gaS-pz-gT4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="vCi-Rb-hNo"/>
+                            <constraint firstItem="Z40-Jh-cLc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="98" id="wCK-vT-e9P"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="37.681159420289859" y="319.56521739130437"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launch_image" width="414" height="736"/>
+    </resources>
 </document>

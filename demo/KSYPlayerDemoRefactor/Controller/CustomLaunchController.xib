@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomLaunchController">
             <connections>
                 <outlet property="openPlayButton" destination="ha9-31-arX" id="mNd-N5-r2b"/>
+                <outlet property="versionLab" destination="UH5-1v-21G" id="gdC-Rs-UPN"/>
                 <outlet property="view" destination="fCK-AU-QGe" id="nRx-0U-prA"/>
             </connections>
         </placeholder>

@@ -8,7 +8,9 @@
 
 #import "CustomLaunchController.h"
 
+
 @interface CustomLaunchController ()
+@property (weak, nonatomic) IBOutlet UILabel *versionLab;
 
 @end
 
@@ -16,13 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+//    self.versionLab.text = @"33.33.333";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)openPlayHandler:(id)sender {
     self.openPlayButton.userInteractionEnabled = NO;
     UIView *superView = [UIApplication sharedApplication].keyWindow;
@@ -40,14 +38,5 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

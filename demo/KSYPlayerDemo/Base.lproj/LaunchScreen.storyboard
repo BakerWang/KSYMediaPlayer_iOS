@@ -25,56 +25,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="gaS-pz-gT4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金山视频云播放SDK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z40-Jh-cLc">
-                                <rect key="frame" x="63" y="118" width="288" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提供更专业可靠的直点播服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-uQ-0zk">
-                                <rect key="frame" x="127" y="172" width="160" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK V1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itW-mK-jr1">
-                                <rect key="frame" x="176" y="627" width="62" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京金山云网络技术有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uv4-mB-WLf">
-                                <rect key="frame" x="127" y="693" width="160" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-H7-7lM">
-                                <rect key="frame" x="127" y="577" width="160" height="40"/>
-                                <color key="backgroundColor" red="0.93937265869999997" green="0.26733985539999999" blue="0.25271934270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="uNE-Dt-EyQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="开启播放"/>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="gaS-pz-gT4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="0NH-O3-pfA"/>
-                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Ik-Q6-XgS"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Uv4-mB-WLf" secondAttribute="bottom" constant="28" id="5WJ-yy-Ion"/>
-                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="top" secondItem="itW-mK-jr1" secondAttribute="bottom" constant="51" id="BCX-H7-kt1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gaS-pz-gT4" secondAttribute="trailing" constant="-20" id="Hg2-xA-Lu0"/>
-                            <constraint firstItem="itW-mK-jr1" firstAttribute="top" secondItem="TGy-H7-7lM" secondAttribute="bottom" constant="10" id="LSj-RH-cgf"/>
-                            <constraint firstItem="Z40-Jh-cLc" firstAttribute="centerX" secondItem="gaS-pz-gT4" secondAttribute="centerX" id="UcJ-qM-KgB"/>
-                            <constraint firstItem="TGy-H7-7lM" firstAttribute="leading" secondItem="Uv4-mB-WLf" secondAttribute="leading" id="X62-3h-9ji"/>
-                            <constraint firstItem="dlP-uQ-0zk" firstAttribute="centerX" secondItem="Z40-Jh-cLc" secondAttribute="centerX" id="XL0-2V-j8R"/>
-                            <constraint firstItem="Uv4-mB-WLf" firstAttribute="centerX" secondItem="itW-mK-jr1" secondAttribute="centerX" id="Y0o-zP-Hsw"/>
-                            <constraint firstItem="TGy-H7-7lM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qXG-1U-CUH"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gaS-pz-gT4" secondAttribute="bottom" id="rDG-Xg-HZC"/>
-                            <constraint firstItem="dlP-uQ-0zk" firstAttribute="top" secondItem="Z40-Jh-cLc" secondAttribute="bottom" constant="15" id="snG-pG-FSa"/>
+                            <constraint firstItem="gaS-pz-gT4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="YP0-Wx-sI6"/>
                             <constraint firstItem="gaS-pz-gT4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="vCi-Rb-hNo"/>
-                            <constraint firstItem="Z40-Jh-cLc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="98" id="wCK-vT-e9P"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gaS-pz-gT4" secondAttribute="bottom" id="wc0-iZ-AK0"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

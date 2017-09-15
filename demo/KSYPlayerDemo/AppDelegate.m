@@ -32,7 +32,9 @@
 //        [self.window makeKeyAndVisible];
 //    }
     
-    [NSThread sleepForTimeInterval:300];
+    
+    
+//    [NSThread sleepForTimeInterval:300];
     
     return YES;
 }

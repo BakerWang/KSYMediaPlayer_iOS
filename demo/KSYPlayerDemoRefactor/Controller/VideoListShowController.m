@@ -125,9 +125,13 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.view hideToastActivity];
-        strongSelf.videoListViewModel = [[VideoListViewModel alloc] initWithJsonResponseData:data];
-        [strongSelf.videoCollectionView reloadData];
-        [strongSelf.headerView configeVideoModel:self.videoListViewModel.listViewDataSource.firstObject];
+        if (!error) {
+            strongSelf.videoListViewModel = [[VideoListViewModel alloc] initWithJsonResponseData:data];
+            [strongSelf.headerView configeVideoModel:self.videoListViewModel.listViewDataSource.firstObject];
+            [strongSelf.videoCollectionView reloadData];
+        } else {
+            NSLog(@"Fetch video data error----- : %@",error);
+        }
     }];
     [task resume];
 }
@@ -156,7 +160,7 @@
             UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
             collectionView.dataSource = self;
             collectionView.delegate = self;
-            collectionView.scrollsToTop = NO;
+//            collectionView.scrollsToTop = NO;
             collectionView.alwaysBounceVertical = YES;
             [collectionView registerNib:[UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kVideoCollectionViewCellId];
             collectionView;
@@ -276,8 +280,6 @@
                 strongSelf.willAppearFromPlayerView = YES;
             };
         }
-
-        
     } else if (self.showType == VideoListShowTypeVod) {
         
         if (self.vodPlayListVC) {

@@ -7,7 +7,6 @@
 //
 
 #import "PlayerViewModel.h"
-#import "VideoContainerView.h"
 #import "VodPlayOperationView.h"
 #import "VodPlayController.h"
 #import "LivePlayController.h"
@@ -28,28 +27,6 @@
         _currPlayingIndex = selectedIndex;
     }
     return self;
-}
-
-- (void)fullScreenHandlerForView:(VideoContainerView *)aView isFullScreen:(BOOL) isFullScreen {
-    [aView removeFromSuperview];
-    UIInterfaceOrientation orientation = UIInterfaceOrientationUnknown;
-    if (isFullScreen) {
-        UIWindow *keywindow = [[UIApplication sharedApplication] keyWindow];
-        [keywindow addSubview:aView];
-        [aView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(keywindow);
-        }];
-        orientation = UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationLandscapeLeft;
-    } else {
-        [_owner.view addSubview:aView];
-        [aView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.leading.trailing.top.equalTo(_owner.view);
-            make.height.mas_equalTo(211);
-        }];
-        orientation = UIInterfaceOrientationPortrait;
-    }
-    [[UIDevice currentDevice] setValue:@(orientation) forKey:@"orientation"];
-    aView.fullScreen = (orientation != UIInterfaceOrientationPortrait);
 }
 
 - (void)fullScreenHandlerForPlayController:(UIViewController *)playController

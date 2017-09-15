@@ -61,11 +61,9 @@
 		F07DE41A1F4C21D000370C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07DE4191F4C21D000370C54 /* Main.storyboard */; };
 		F07DE41F1F4C236200370C54 /* VersionSwitchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE41E1F4C236200370C54 /* VersionSwitchHandler.m */; };
 		F07DE42A1F4C34C600370C54 /* SettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4291F4C34C600370C54 /* SettingModel.m */; };
-		F07DE4301F4C4FD200370C54 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE42F1F4C4FD200370C54 /* PlayerViewController.m */; };
 		F07DE4391F4C593700370C54 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4381F4C593700370C54 /* VideoModel.m */; };
 		F07DE43C1F4C5AC500370C54 /* VideoListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE43B1F4C5AC500370C54 /* VideoListViewModel.m */; };
 		F07DE4431F4D216E00370C54 /* SettingDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4421F4D216E00370C54 /* SettingDataHandler.m */; };
-		F07DE4461F4D44E500370C54 /* VideoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4451F4D44E500370C54 /* VideoContainerView.m */; };
 		F07DE4491F4D459300370C54 /* PlayerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4481F4D459300370C54 /* PlayerViewModel.m */; };
 		F07DE4911F4D589F00370C54 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07DE4771F4D589F00370C54 /* Info.plist */; };
 		F07DE4921F4D589F00370C54 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F07DE4791F4D589F00370C54 /* MASCompositeConstraint.m */; };
@@ -114,10 +112,8 @@
 		F0AEF1651F6692750079466E /* VodPlayOperationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEF1641F6692740079466E /* VodPlayOperationView.m */; };
 		F0CC55B51F6BBD5F006BD0DF /* CustomLaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CC55B31F6BBD5F006BD0DF /* CustomLaunchController.m */; };
 		F0CC55B61F6BBD5F006BD0DF /* CustomLaunchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CC55B41F6BBD5F006BD0DF /* CustomLaunchController.xib */; };
-		F0E6FDA61F4DAB6000BA549A /* VideoContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */; };
 		F0E6FDAA1F4DACF300BA549A /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FDA81F4DACF300BA549A /* PlayerTableViewCell.m */; };
 		F0E6FDAB1F4DACF300BA549A /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E6FDA91F4DACF300BA549A /* PlayerTableViewCell.xib */; };
-		F0E6FDB11F4E7BBA00BA549A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FDB01F4E7BBA00BA549A /* TableViewController.m */; };
 		F0E6FDB41F4E7D9100BA549A /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FDB31F4E7D9100BA549A /* SettingViewController.m */; };
 		F0E6FDB71F4EC72F00BA549A /* VodPlayControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E6FDB61F4EC72F00BA549A /* VodPlayControlView.m */; };
 		F0E6FDB91F4EC74300BA549A /* VodPlayControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E6FDB81F4EC74300BA549A /* VodPlayControlView.xib */; };
@@ -241,16 +237,12 @@
 		F07DE41E1F4C236200370C54 /* VersionSwitchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionSwitchHandler.m; sourceTree = "<group>"; };
 		F07DE4281F4C34C600370C54 /* SettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingModel.h; sourceTree = "<group>"; };
 		F07DE4291F4C34C600370C54 /* SettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingModel.m; sourceTree = "<group>"; };
-		F07DE42E1F4C4FD200370C54 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
-		F07DE42F1F4C4FD200370C54 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		F07DE4371F4C593700370C54 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
 		F07DE4381F4C593700370C54 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		F07DE43A1F4C5AC500370C54 /* VideoListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewModel.h; sourceTree = "<group>"; };
 		F07DE43B1F4C5AC500370C54 /* VideoListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewModel.m; sourceTree = "<group>"; };
 		F07DE4411F4D216E00370C54 /* SettingDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingDataHandler.h; sourceTree = "<group>"; };
 		F07DE4421F4D216E00370C54 /* SettingDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingDataHandler.m; sourceTree = "<group>"; };
-		F07DE4441F4D44E500370C54 /* VideoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoContainerView.h; sourceTree = "<group>"; };
-		F07DE4451F4D44E500370C54 /* VideoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoContainerView.m; sourceTree = "<group>"; };
 		F07DE4471F4D459300370C54 /* PlayerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewModel.h; sourceTree = "<group>"; };
 		F07DE4481F4D459300370C54 /* PlayerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewModel.m; sourceTree = "<group>"; };
 		F07DE4771F4D589F00370C54 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -350,12 +342,9 @@
 		F0CC55B21F6BBD5F006BD0DF /* CustomLaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLaunchController.h; sourceTree = "<group>"; };
 		F0CC55B31F6BBD5F006BD0DF /* CustomLaunchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLaunchController.m; sourceTree = "<group>"; };
 		F0CC55B41F6BBD5F006BD0DF /* CustomLaunchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLaunchController.xib; sourceTree = "<group>"; };
-		F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoContainerView.xib; sourceTree = "<group>"; };
 		F0E6FDA71F4DACF300BA549A /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
 		F0E6FDA81F4DACF300BA549A /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
 		F0E6FDA91F4DACF300BA549A /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
-		F0E6FDAF1F4E7BBA00BA549A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		F0E6FDB01F4E7BBA00BA549A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		F0E6FDB21F4E7D9100BA549A /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		F0E6FDB31F4E7D9100BA549A /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		F0E6FDB51F4EC72F00BA549A /* VodPlayControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VodPlayControlView.h; sourceTree = "<group>"; };
@@ -582,10 +571,6 @@
 				F0AEF15E1F6682E10079466E /* VodListPlayController.m */,
 				F0E6FDB21F4E7D9100BA549A /* SettingViewController.h */,
 				F0E6FDB31F4E7D9100BA549A /* SettingViewController.m */,
-				F07DE42E1F4C4FD200370C54 /* PlayerViewController.h */,
-				F07DE42F1F4C4FD200370C54 /* PlayerViewController.m */,
-				F0E6FDAF1F4E7BBA00BA549A /* TableViewController.h */,
-				F0E6FDB01F4E7BBA00BA549A /* TableViewController.m */,
 				F00FDA241F5938600001B516 /* RecordeViewController.h */,
 				F00FDA251F5938600001B516 /* RecordeViewController.m */,
 				F00FDA261F5938600001B516 /* RecordeViewController.xib */,
@@ -603,9 +588,6 @@
 				F08A7A551F6A82B500C710BB /* NemoFavourCALayer.m */,
 				F08A7A511F6A827E00C710BB /* NemoFavourView.h */,
 				F08A7A521F6A827E00C710BB /* NemoFavourView.m */,
-				F07DE4441F4D44E500370C54 /* VideoContainerView.h */,
-				F07DE4451F4D44E500370C54 /* VideoContainerView.m */,
-				F0E6FDA51F4DAB6000BA549A /* VideoContainerView.xib */,
 				F0AEF1631F6692740079466E /* VodPlayOperationView.h */,
 				F0AEF1641F6692740079466E /* VodPlayOperationView.m */,
 				F08A7A4B1F67B0D900C710BB /* LivePlayOperationView.h */,
@@ -894,7 +876,6 @@
 				74B9ED681C158675003149E9 /* Assets.xcassets in Resources */,
 				F0CC55B61F6BBD5F006BD0DF /* CustomLaunchController.xib in Resources */,
 				F00FDA0F1F56643E0001B516 /* SpeedChoiceView.xib in Resources */,
-				F0E6FDA61F4DAB6000BA549A /* VideoContainerView.xib in Resources */,
 				F00FDA171F57BA200001B516 /* SuspendPlayView.xib in Resources */,
 				F00FDA0A1F5552C30001B516 /* DefinitionMenuView.xib in Resources */,
 				F0E6FEDD1F53CB3800BA549A /* Info.plist in Resources */,
@@ -934,7 +915,6 @@
 				F08A7A561F6A82B500C710BB /* NemoFavourCALayer.m in Sources */,
 				F07DE4E41F4D703F00370C54 /* SDWebImagePrefetcher.m in Sources */,
 				F0E6FEE21F53CB3800BA549A /* JSONHTTPClient.m in Sources */,
-				F07DE4461F4D44E500370C54 /* VideoContainerView.m in Sources */,
 				F0AEF15F1F6682E10079466E /* VodListPlayController.m in Sources */,
 				587CEF481EFBA7BC0018F226 /* KSYSimplePlayVC.m in Sources */,
 				F07DE49A1F4D589F00370C54 /* View+MASAdditions.m in Sources */,
@@ -965,7 +945,6 @@
 				F07DE4F51F4D99D500370C54 /* VideoCollectionHeaderView.m in Sources */,
 				95B4A4131CC085BE00CB6804 /* KSYSQLite.m in Sources */,
 				F07DE4991F4D589F00370C54 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				F07DE4301F4C4FD200370C54 /* PlayerViewController.m in Sources */,
 				74B9ED601C158675003149E9 /* AppDelegate.m in Sources */,
 				E328B4D81CCE087400BD31FC /* KSYDBCreater.m in Sources */,
 				582096031EDED32600C38D0F /* KSYAVWriter.m in Sources */,
@@ -1004,7 +983,6 @@
 				F0E6FEDF1F53CB3800BA549A /* JSONModelClassProperty.m in Sources */,
 				F07DE4DD1F4D703F00370C54 /* SDImageCache.m in Sources */,
 				F0E6FEE11F53CB3800BA549A /* JSONAPI.m in Sources */,
-				F0E6FDB11F4E7BBA00BA549A /* TableViewController.m in Sources */,
 				F00FDA341F5CFB4C0001B516 /* UIView+Toast.m in Sources */,
 				F07DE4431F4D216E00370C54 /* SettingDataHandler.m in Sources */,
 				588141EF1ECB0F2F0022A360 /* KSYPlayerVC.m in Sources */,

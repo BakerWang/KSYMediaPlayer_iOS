@@ -240,9 +240,6 @@
 
 - (void)praiseHandler {
     [self.favView animationStart];
-    if (self.praiseBlock) {
-        self.praiseBlock();
-    }
 }
 
 #pragma mark --------

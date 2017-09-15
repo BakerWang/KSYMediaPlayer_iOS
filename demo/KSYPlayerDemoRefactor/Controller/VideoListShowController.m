@@ -8,14 +8,11 @@
 
 #import "VideoListShowController.h"
 #import "VideoListViewModel.h"
-#import "PlayerViewController.h"
 #import "FlowLayout.h"
 #import "VideoCollectionViewCell.h"
-#import "PlayerViewController.h"
 #import "PlayerViewModel.h"
 #import "VideoCollectionHeaderView.h"
 #import "SuspendPlayView.h"
-#import "VideoContainerView.h"
 #import "QRViewController.h"
 #import "VideoModel.h"
 #import "UIView+Toast.h"
@@ -30,7 +27,6 @@
 @property (nonatomic, strong) UICollectionView          *videoCollectionView;
 @property (nonatomic, strong) VideoCollectionHeaderView *headerView;
 
-@property (nonatomic, strong) PlayerViewController      *pvc;
 @property (nonatomic, strong) VodPlayController         *vodPlayVC;
 @property (nonatomic, strong) VodListPlayController     *vodPlayListVC;
 
@@ -67,11 +63,7 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
     if (_willAppearFromPlayerView) {
-//        [self.view addSubview:self.clearView];
         [self.view addSubview:self.suspendView];
-//        [self.clearView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.edges.equalTo(self.view);
-//        }];
         self.suspendView.frame = CGRectMake(0, 0, 200, 113);
         self.suspendView.center = self.view.center;
         
@@ -160,7 +152,6 @@
             UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
             collectionView.dataSource = self;
             collectionView.delegate = self;
-//            collectionView.scrollsToTop = NO;
             collectionView.alwaysBounceVertical = YES;
             [collectionView registerNib:[UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:kVideoCollectionViewCellId];
             collectionView;
@@ -199,7 +190,6 @@
         [self.vodPlayVC.view removeFromSuperview];
         [self.vodPlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-//        [self.clearView removeFromSuperview];
         [self.vodPlayListVC pushFromSuspendHandler];
         [self.vodPlayVC recoveryHandler];
         [self.navigationController pushViewController:self.vodPlayListVC animated:YES];
@@ -207,7 +197,6 @@
         [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-//        [self.clearView removeFromSuperview];
         [self.livePlayVC recoveryHandler];
         [self.livePlayVC pushFromSuspendHandler];
         [self.navigationController pushViewController:self.livePlayVC animated:YES];
@@ -235,7 +224,6 @@
         [self.livePlayVC.player.view removeFromSuperview];
         [self.livePlayVC removeFromParentViewController];
         [self.suspendView removeFromSuperview];
-//        [self.clearView removeFromSuperview];
         [self.livePlayVC stopSuspend];
         self.livePlayVC = nil;
     }
@@ -260,7 +248,6 @@
             [self.livePlayVC.player.view removeFromSuperview];
             [self.livePlayVC removeFromParentViewController];
             [self.suspendView removeFromSuperview];
-//            [self.clearView removeFromSuperview];
             [self.livePlayVC recoveryHandler];
             if ([currPlayUrl isEqualToString:selectPlayUrl]) {
                 [self.livePlayVC pushFromSuspendHandler];

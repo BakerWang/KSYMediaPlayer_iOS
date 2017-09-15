@@ -26,9 +26,6 @@
                        videoListViewModel:(VideoListViewModel *)videoListViewModel
                             selectedIndex:(NSInteger)selectedIndex;
 
-- (void)fullScreenHandlerForView:(VideoContainerView *)aView
-                   isFullScreen:(BOOL) isFullScreen;
-
 - (void)fullScreenHandlerForPlayController:(UIViewController *)playController
                     isFullScreen:(BOOL) isFullScreen;
 

@@ -16,7 +16,6 @@
 
 @interface VodListPlayController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) PlayerViewModel          *playerViewModel;
-//@property (nonatomic, strong) VodPlayController        *playVC;
 @property (nonatomic, strong) UITableView              *videoTableView;
 @property (nonatomic, weak)   UIView                   *suspendView;
 @end

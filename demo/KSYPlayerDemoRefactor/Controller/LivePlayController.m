@@ -131,8 +131,6 @@
             strongSelf.rotateIndex += 1;
         }
     };
-    
-    // 点赞block
 }
 
 - (void)setPlayerViewModel:(PlayerViewModel *)playerViewModel {
@@ -155,35 +153,6 @@
         }
     }
     [self notifyHandler:notify];
-}
-
-#pragma mark --
-#pragma mark - KVO
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    
-    if([keyPath isEqual:@"currentPlaybackTime"]) {
-        
-    }
-    //    else if([keyPath isEqual:@"clientIP"])
-    //    {
-    //        NSLog(@"client IP is %@\n", [change objectForKey:NSKeyValueChangeNewKey]);
-    //    }
-    //    else if([keyPath isEqual:@"localDNSIP"])
-    //    {
-    //        NSLog(@"local DNS IP is %@\n", [change objectForKey:NSKeyValueChangeNewKey]);
-    //    }
-    else if ([keyPath isEqualToString:@"player"]) {
-        if (self.player) {
-            
-        } else {
-            
-        }
-    }
 }
 
 #pragma mark ------

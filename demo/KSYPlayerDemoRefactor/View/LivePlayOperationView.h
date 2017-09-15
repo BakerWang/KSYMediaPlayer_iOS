@@ -18,7 +18,6 @@
 @property (nonatomic, copy) void(^screenShotBlock)(void);
 @property (nonatomic, copy) void(^screenRecordeBlock)(void);
 @property (nonatomic, copy) void(^mirrorBlock)(void);
-@property (nonatomic, copy) void(^praiseBlock)(void);
 @property (nonatomic, copy) void(^pictureRotateBlock)(void);
 
 - (instancetype)initWithVideoModel:(VideoModel *)videoModel;

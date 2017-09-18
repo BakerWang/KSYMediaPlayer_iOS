@@ -92,7 +92,8 @@
         _playControlView.backgroundColor = [UIColor clearColor];
         [_playControlView.fullScreenButton addTarget:self action:@selector(fullScreenAction) forControlEvents:UIControlEventTouchUpInside];
         [_playControlView.pauseButton addTarget:self action:@selector(playStateHandler) forControlEvents:UIControlEventTouchUpInside];
-        [_playControlView.playSlider addTarget:self action:@selector(sliderValueChangedHandler) forControlEvents:UIControlEventValueChanged];
+        [_playControlView.playSlider addTarget:self action:@selector(sliderValueChangedHandler) forControlEvents:UIControlEventTouchUpInside];
+        
         [_playControlView.nextButton addTarget:self action:@selector(nextButtonHandler) forControlEvents:UIControlEventTouchUpInside];
         [_playControlView.switchDefinitionButton addTarget:self action:@selector(switchDefinitionButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     }

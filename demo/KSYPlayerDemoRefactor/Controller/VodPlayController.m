@@ -150,6 +150,16 @@
     [self notifyHandler:notify];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if([keyPath isEqual:@"currentPlaybackTime"]) {
+        [self.playOperationView updatePlayedTime:self.player.currentPlaybackTime];
+    }
+}
+
 #pragma mark ------
 #pragma mark - public method
 

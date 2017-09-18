@@ -232,11 +232,11 @@
         if (_player.bufferEmptyCount &&
             (MPMovieLoadStatePlayable & _player.loadState ||
              MPMovieLoadStatePlaythroughOK & _player.loadState)){
-                NSLog(@"player finish caching");
-                NSString *message = [[NSString alloc]initWithFormat:@"loading occurs, %d - %0.3fs",
-                                     (int)_player.bufferEmptyCount,
-                                     _player.bufferEmptyDuration];
-                [self toast:message];
+//                NSLog(@"player finish caching");
+//                NSString *message = [[NSString alloc]initWithFormat:@"loading occurs, %d - %0.3fs",
+//                                     (int)_player.bufferEmptyCount,
+//                                     _player.bufferEmptyDuration];
+//                [self toast:message];
             }
     }
     if (MPMoviePlayerPlaybackDidFinishNotification ==  notify.name) {

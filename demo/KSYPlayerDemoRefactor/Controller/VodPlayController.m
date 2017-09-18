@@ -100,7 +100,9 @@
         if (definitionIndex < strongSelf.playerViewModel.playingVideoModel.PlayURL.count && definitionIndex != strongSelf.playerViewModel.playingVideoModel.definitation.integerValue) {
             strongSelf.switchingDefination = YES;
             NSString *definitionUrl = strongSelf.playerViewModel.playingVideoModel.PlayURL[definitionIndex];
-            [strongSelf.player reload:[NSURL URLWithString:definitionUrl]];
+            [strongSelf.player reset:YES];
+            [strongSelf.player setUrl:[NSURL URLWithString:definitionUrl]];
+            [strongSelf.player prepareToPlay];
             strongSelf.playerViewModel.playingVideoModel.definitation = @(definition);
         }
     };
@@ -156,7 +158,10 @@
                        context:(void *)context
 {
     if([keyPath isEqual:@"currentPlaybackTime"]) {
-        [self.playOperationView updatePlayedTime:self.player.currentPlaybackTime];
+        if (!self.switchingDefination) {
+            self.playedTime = self.player.currentPlaybackTime;
+        }
+        [self.playOperationView updatePlayedTime:_playedTime];
     }
 }
 

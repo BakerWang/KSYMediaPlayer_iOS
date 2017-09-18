@@ -347,7 +347,9 @@
 #pragma mark - public method
 
 - (void)reload:(NSURL *)aUrl {
-    [_player reload:aUrl];
+    [_player reset:NO];
+    [_player setUrl:aUrl];
+    [_player prepareToPlay];
 }
 
 #pragma mark -------------

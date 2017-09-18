@@ -190,7 +190,9 @@
     }
     
     urlStr = self.currentVideoModel.PlayURL[definitationIndex];
-    [self.player reload:[NSURL URLWithString:urlStr]];
+    [self.player reset:NO];
+    [self.player setUrl:[NSURL URLWithString:urlStr]];
+    [self.player prepareToPlay];
     [self.playOperationView configeWithVideoModel:self.currentVideoModel];
 }
 

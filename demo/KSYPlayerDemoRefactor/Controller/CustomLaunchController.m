@@ -7,7 +7,7 @@
 //
 
 #import "CustomLaunchController.h"
-
+#import <KSYMediaPlayer/KSYMoviePlayerController.h>
 
 @interface CustomLaunchController ()
 @property (weak, nonatomic) IBOutlet UILabel *versionLab;
@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.versionLab.text = @"33.33.333";
+    self.versionLab.text = [[[KSYMoviePlayerController alloc] init] getVersion];
 }
 
 - (IBAction)openPlayHandler:(id)sender {
